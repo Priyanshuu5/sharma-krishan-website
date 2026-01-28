@@ -48,11 +48,13 @@ export function CTASection() {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
+
+              {/* Ensure Explore Services is visible by default (not hidden via hover-only classes) */}
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-base px-8"
+                className="bg-white/90 text-primary-700 border border-gray-200 hover:bg-gray-50 text-base px-8 opacity-100 visible"
               >
                 <Link to="/services">Explore Services</Link>
               </Button>

@@ -4,8 +4,8 @@ import {
   FileText, 
   Calculator, 
   Building2, 
-  ClipboardCheck, 
-  Briefcase, 
+  ShieldCheck, 
+  Heart, 
   TrendingUp,
   ArrowRight 
 } from "lucide-react";
@@ -13,40 +13,40 @@ import { Button } from "@/components/ui/button";
 
 const services = [
   {
+    icon: Building2,
+    title: "Business Registration",
+    description: "Pvt Ltd, LLP, OPC, Foreign Company, and other legal entity registrations.",
+    href: "/services#business-registrations",
+  },
+  {
     icon: Calculator,
-    title: "Income Tax Services",
-    description: "Expert tax planning, filing, and compliance services for individuals and businesses.",
-    href: "/services#taxation",
+    title: "Taxation & Compliance",
+    description: "Income Tax, GST, TDS filing, and comprehensive tax planning services.",
+    href: "/services#audit-tax-management",
+  },
+  {
+    icon: ShieldCheck,
+    title: "IP Rights (Trademark)",
+    description: "Trademark, Copyright, Patent, and Design registration to protect your brand.",
+    href: "/services#intellectual-property-rights",
+  },
+  {
+    icon: Heart,
+    title: "NGO Services",
+    description: "Trust, Society, Section-8 Company registration, and FCRA compliance.",
+    href: "/services#ngo-trust-services",
   },
   {
     icon: FileText,
-    title: "GST Services",
-    description: "Complete GST registration, filing, and advisory services to ensure compliance.",
-    href: "/services#gst",
-  },
-  {
-    icon: ClipboardCheck,
-    title: "Audit & Assurance",
-    description: "Comprehensive statutory and internal audits with detailed reporting.",
-    href: "/services#audit",
-  },
-  {
-    icon: Building2,
-    title: "RERA Compliance",
-    description: "Specialized services for real estate regulatory compliance and documentation.",
-    href: "/services#rera",
-  },
-  {
-    icon: Briefcase,
-    title: "Company Registration",
-    description: "End-to-end company incorporation and registration services.",
-    href: "/services#registration",
+    title: "Audit Services",
+    description: "Statutory, Tax, GST, Bank, and Internal audits with detailed reporting.",
+    href: "/services#audit-tax-management",
   },
   {
     icon: TrendingUp,
     title: "Financial Advisory",
-    description: "Strategic financial planning and consulting for business growth.",
-    href: "/services#advisory",
+    description: "Valuation, investment planning, and strategic consulting for growth.",
+    href: "/services#financial-advisory",
   },
 ];
 
@@ -69,7 +69,7 @@ export function ServicesPreview() {
             Our Professional Services
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Comprehensive financial solutions tailored to meet your personal and business needs
+            Comprehensive financial and legal solutions tailored to meet your personal and business needs
           </p>
         </motion.div>
 

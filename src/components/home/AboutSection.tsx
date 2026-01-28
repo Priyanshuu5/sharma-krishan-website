@@ -7,7 +7,7 @@ const features = [
   "Expert team of qualified Chartered Accountants",
   "Personalized attention to every client",
   "Transparent and competitive pricing",
-  "18+ years of industry experience",
+  "8+ years of industry experience",
   "100% compliance and accuracy guaranteed",
   "End-to-end financial solutions",
 ];
@@ -86,7 +86,7 @@ export function AboutSection() {
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
               Founded by CA Krishan Kumar Sharma, our firm has been providing exceptional 
-              financial services since 2005. We combine deep expertise with a client-centric 
+              financial services since 2017. We combine deep expertise with a client-centric 
               approach to deliver solutions that drive success and ensure compliance.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
