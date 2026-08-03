@@ -3,6 +3,66 @@ import { Link } from "react-router-dom";
 import { Linkedin, Mail, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
+
+const teamSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kamsandco.com/team/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kamsandco.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Team",
+          "item": "https://kamsandco.com/team"
+        }
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://kamsandco.com/team/#webpage",
+      "url": "https://kamsandco.com/team",
+      "name": "Our Expert CA Team - KAMS & Co",
+      "description": "Meet our team of qualified partners, financial consultants, and tax experts led by CA Krishan Kumar Sharma.",
+      "breadcrumb": {
+        "@id": "https://kamsandco.com/team/#breadcrumb"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 5,
+        "itemListElement": [
+          {
+            "@type": "Person",
+            "name": "CA Krishan Kumar Sharma",
+            "jobTitle": "Founder & Managing Partner",
+            "worksFor": {
+              "@type": "AccountingService",
+              "name": "KAMS & Co"
+            }
+          },
+          {
+            "@type": "Person",
+            "name": "CA Rajesh Gupta",
+            "jobTitle": "Senior Partner"
+          },
+          {
+            "@type": "Person",
+            "name": "CA Meera Joshi",
+            "jobTitle": "Senior Partner"
+          }
+        ]
+      }
+    }
+  ]
+};
 
 const team = [
   {
@@ -55,6 +115,11 @@ const team = [
 const Team = () => {
   return (
     <Layout>
+      <SEO
+        title="Our Expert Team | Chartered Accountants - KAMS & Co"
+        description="Meet the experienced partners and accountants at KAMS & Co. Led by founder CA Krishan Kumar Sharma with 18+ years of taxation & audit expertise."
+        schemaMarkup={teamSchema}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-hero relative">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold" />
@@ -130,7 +195,7 @@ const Team = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:krishan@sharmakrishanandco.com"
+                  href="mailto:krishan@kamsandco.com"
                   className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="Email"
                 >

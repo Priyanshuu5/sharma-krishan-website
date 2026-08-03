@@ -3,6 +3,41 @@ import { motion } from "framer-motion";
 import { Upload, FileText, CheckCircle, AlertCircle, Info } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
+
+const helpCenterSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kamsandco.com/help-center/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kamsandco.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Help Center",
+          "item": "https://kamsandco.com/help-center"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kamsandco.com/help-center/#webpage",
+      "url": "https://kamsandco.com/help-center",
+      "name": "Document Upload Center & Support - KAMS & Co",
+      "description": "Securely submit your financial documents, receipts, tax statements, and audit reports to the KAMS & Co team.",
+      "breadcrumb": {
+        "@id": "https://kamsandco.com/help-center/#breadcrumb"
+      }
+    }
+  ]
+};
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -80,6 +115,11 @@ const HelpCenter = () => {
   if (isSubmitted) {
     return (
       <Layout>
+        <SEO
+          title="Submission Successful | Document Upload Center - KAMS & Co"
+          description="Your documents have been securely uploaded to KAMS & Co. We will review and contact you shortly."
+          schemaMarkup={helpCenterSchema}
+        />
         <section className="pt-32 pb-20 min-h-screen bg-background">
           <div className="container mx-auto px-4">
             <motion.div
@@ -109,6 +149,11 @@ const HelpCenter = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Document Upload Center | Secure Support - KAMS & Co"
+        description="Securely upload your documentation for audits, tax filing, and GST compliance reviews. KAMS & Co handles client documents with strict privacy."
+        schemaMarkup={helpCenterSchema}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-hero relative">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold" />
@@ -247,6 +292,7 @@ const HelpCenter = () => {
                           type="button"
                           onClick={() => removeFile(index)}
                           className="text-muted-foreground hover:text-destructive transition-colors"
+                          aria-label="Remove file"
                         >
                           <AlertCircle className="w-5 h-5" />
                         </button>

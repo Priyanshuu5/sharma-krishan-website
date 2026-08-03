@@ -31,6 +31,41 @@ import {
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kamsandco.com/services/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kamsandco.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://kamsandco.com/services"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://kamsandco.com/services/#webpage",
+      "url": "https://kamsandco.com/services",
+      "name": "Professional CA Services | GST, Audit, Tax Consulting - KAMS & Co",
+      "description": "Explore our professional services including company registration, auditing, GST compliance, trademark filing, Nidhi/producer company incorporation, and financial planning.",
+      "breadcrumb": {
+        "@id": "https://kamsandco.com/services/#breadcrumb"
+      }
+    }
+  ]
+};
 
 const serviceCategories = [
   {
@@ -119,6 +154,11 @@ const Services = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Our Services | GST, Audit, Tax Consulting - KAMS & Co"
+        description="Comprehensive Chartered Accountancy & legal services in Noida. We handle Company Registration, GST Returns, Tax Audits, IP Rights, and Financial Advisory."
+        schemaMarkup={servicesSchema}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-hero relative">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold" />

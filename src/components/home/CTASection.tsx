@@ -80,7 +80,7 @@ export function CTASection() {
               </motion.a>
 
               <motion.a
-                href="mailto:info@sharmakrishanandco.com"
+                href="mailto:info@kamsandco.com"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -92,7 +92,7 @@ export function CTASection() {
                 </div>
                 <div className="text-left">
                   <p className="text-sm text-primary-foreground/60">Email Us</p>
-                  <p className="font-medium">info@sharmakrishanandco.com</p>
+                  <p className="font-medium">info@kamsandco.com</p>
                 </div>
               </motion.a>
             </div>

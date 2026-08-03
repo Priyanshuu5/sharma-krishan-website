@@ -3,6 +3,55 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SEO } from "@/components/SEO";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kamsandco.com/contact/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kamsandco.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact",
+          "item": "https://kamsandco.com/contact"
+        }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://kamsandco.com/contact/#webpage",
+      "url": "https://kamsandco.com/contact",
+      "name": "Contact Us | Sector 18 Noida - KAMS & Co",
+      "description": "Get in touch with KAMS & Co. Call +91 98765 43210 or email info@kamsandco.com to discuss your taxation, GST, and audit requirements.",
+      "breadcrumb": {
+        "@id": "https://kamsandco.com/contact/#breadcrumb"
+      },
+      "mainEntity": {
+        "@type": "AccountingService",
+        "name": "KAMS & Co",
+        "telephone": "+91-9876543210",
+        "email": "info@kamsandco.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123, Business Plaza, Sector 18",
+          "addressLocality": "Noida",
+          "addressRegion": "Uttar Pradesh",
+          "postalCode": "201301",
+          "addressCountry": "IN"
+        }
+      }
+    }
+  ]
+};
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,7 +71,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@sharmakrishanandco.com", "support@sharmakrishanandco.com"],
+    details: ["info@kamsandco.com", "support@kamsandco.com"],
   },
   {
     icon: Clock,
@@ -53,6 +102,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Contact KAMS & Co | CA Firm in Sector 18, Noida"
+        description="Contact KAMS & Co in Sector 18, Noida. Call +91 98765 43210 or email info@kamsandco.com for expert taxation, GST, and audit consulting."
+        schemaMarkup={contactSchema}
+      />
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-hero relative">
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold" />
