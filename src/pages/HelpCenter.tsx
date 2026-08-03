@@ -10,30 +10,30 @@ const helpCenterSchema = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://kamsandco.com/help-center/#breadcrumb",
+      "@id": "https://kamsco.in/help-center/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://kamsandco.com/"
+          "item": "https://kamsco.in/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Help Center",
-          "item": "https://kamsandco.com/help-center"
+          "item": "https://kamsco.in/help-center"
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://kamsandco.com/help-center/#webpage",
-      "url": "https://kamsandco.com/help-center",
-      "name": "Document Upload Center & Support - KAMS & Co",
-      "description": "Securely submit your financial documents, receipts, tax statements, and audit reports to the KAMS & Co team.",
+      "@id": "https://kamsco.in/help-center/#webpage",
+      "url": "https://kamsco.in/help-center",
+      "name": "Document Upload Center & Support - Kamsco",
+      "description": "Securely submit your financial documents, receipts, tax statements, and audit reports to the Kamsco team.",
       "breadcrumb": {
-        "@id": "https://kamsandco.com/help-center/#breadcrumb"
+        "@id": "https://kamsco.in/help-center/#breadcrumb"
       }
     }
   ]
@@ -116,8 +116,8 @@ const HelpCenter = () => {
     return (
       <Layout>
         <SEO
-          title="Submission Successful | Document Upload Center - KAMS & Co"
-          description="Your documents have been securely uploaded to KAMS & Co. We will review and contact you shortly."
+          title="Submission Successful | Document Upload Center - Kamsco"
+          description="Your documents have been securely uploaded to Kamsco. We will review and contact you shortly."
           schemaMarkup={helpCenterSchema}
         />
         <section className="pt-32 pb-20 min-h-screen bg-background">
@@ -150,8 +150,8 @@ const HelpCenter = () => {
   return (
     <Layout>
       <SEO
-        title="Document Upload Center | Secure Support - KAMS & Co"
-        description="Securely upload your documentation for audits, tax filing, and GST compliance reviews. KAMS & Co handles client documents with strict privacy."
+        title="Document Upload Center | Secure Support - Kamsco"
+        description="Securely upload your documentation for audits, tax filing, and GST compliance reviews. Kamsco handles client documents with strict privacy."
         schemaMarkup={helpCenterSchema}
       />
       {/* Hero Section */}

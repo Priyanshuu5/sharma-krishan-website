@@ -10,30 +10,30 @@ const teamSchema = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://kamsandco.com/team/#breadcrumb",
+      "@id": "https://kamsco.in/team/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://kamsandco.com/"
+          "item": "https://kamsco.in/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Team",
-          "item": "https://kamsandco.com/team"
+          "item": "https://kamsco.in/team"
         }
       ]
     },
     {
       "@type": "AboutPage",
-      "@id": "https://kamsandco.com/team/#webpage",
-      "url": "https://kamsandco.com/team",
-      "name": "Our Expert CA Team - KAMS & Co",
+      "@id": "https://kamsco.in/team/#webpage",
+      "url": "https://kamsco.in/team",
+      "name": "Our Expert CA Team - Kamsco",
       "description": "Meet our team of qualified partners, financial consultants, and tax experts led by CA Krishan Kumar Sharma.",
       "breadcrumb": {
-        "@id": "https://kamsandco.com/team/#breadcrumb"
+        "@id": "https://kamsco.in/team/#breadcrumb"
       },
       "mainEntity": {
         "@type": "ItemList",
@@ -45,7 +45,7 @@ const teamSchema = {
             "jobTitle": "Founder & Managing Partner",
             "worksFor": {
               "@type": "AccountingService",
-              "name": "KAMS & Co"
+              "name": "Kamsco"
             }
           },
           {
@@ -116,8 +116,8 @@ const Team = () => {
   return (
     <Layout>
       <SEO
-        title="Our Expert Team | Chartered Accountants - KAMS & Co"
-        description="Meet the experienced partners and accountants at KAMS & Co. Led by founder CA Krishan Kumar Sharma with 18+ years of taxation & audit expertise."
+        title="Our Expert Team | Chartered Accountants - Kamsco"
+        description="Meet the experienced partners and accountants at Kamsco. Led by founder CA Krishan Kumar Sharma with 18+ years of taxation & audit expertise."
         schemaMarkup={teamSchema}
       />
       {/* Hero Section */}
@@ -195,7 +195,7 @@ const Team = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="mailto:krishan@kamsandco.com"
+                  href="mailto:krishan@kamsco.in"
                   className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
                   aria-label="Email"
                 >

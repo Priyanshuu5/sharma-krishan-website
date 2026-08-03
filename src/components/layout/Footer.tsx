@@ -24,7 +24,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="space-y-4">
             <div>
-              <h3 className="font-serif text-2xl font-bold">KAMS & Co</h3>
+              <h3 className="font-serif text-2xl font-bold">Kamsco</h3>
               <p className="text-gold text-sm tracking-wider">Chartered Accountants</p>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
@@ -113,10 +113,10 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
                 <a
-                  href="mailto:info@kamsandco.com"
+                  href="mailto:info@kamsco.in"
                   className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
                 >
-                  info@kamsandco.com
+                  info@kamsco.in
                 </a>
               </li>
             </ul>
@@ -127,7 +127,7 @@ export function Footer() {
         <div className="mt-12 pt-8 border-t border-primary-foreground/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-primary-foreground/60 text-sm">
-              © {new Date().getFullYear()} KAMS & Co. All rights reserved.
+              © {new Date().getFullYear()} Kamsco. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link to="/privacy" className="text-primary-foreground/60 hover:text-accent text-sm transition-colors">

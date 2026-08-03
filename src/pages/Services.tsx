@@ -38,30 +38,30 @@ const servicesSchema = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://kamsandco.com/services/#breadcrumb",
+      "@id": "https://kamsco.in/services/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://kamsandco.com/"
+          "item": "https://kamsco.in/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://kamsandco.com/services"
+          "item": "https://kamsco.in/services"
         }
       ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://kamsandco.com/services/#webpage",
-      "url": "https://kamsandco.com/services",
-      "name": "Professional CA Services | GST, Audit, Tax Consulting - KAMS & Co",
+      "@id": "https://kamsco.in/services/#webpage",
+      "url": "https://kamsco.in/services",
+      "name": "Professional CA Services | GST, Audit, Tax Consulting - Kamsco",
       "description": "Explore our professional services including company registration, auditing, GST compliance, trademark filing, Nidhi/producer company incorporation, and financial planning.",
       "breadcrumb": {
-        "@id": "https://kamsandco.com/services/#breadcrumb"
+        "@id": "https://kamsco.in/services/#breadcrumb"
       }
     }
   ]
@@ -155,7 +155,7 @@ const Services = () => {
   return (
     <Layout>
       <SEO
-        title="Our Services | GST, Audit, Tax Consulting - KAMS & Co"
+        title="Our Services | GST, Audit, Tax Consulting - Kamsco"
         description="Comprehensive Chartered Accountancy & legal services in Noida. We handle Company Registration, GST Returns, Tax Audits, IP Rights, and Financial Advisory."
         schemaMarkup={servicesSchema}
       />

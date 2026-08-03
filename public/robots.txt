@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://kamsandco.com/sitemap.xml
+Sitemap: https://kamsco.in/sitemap.xml

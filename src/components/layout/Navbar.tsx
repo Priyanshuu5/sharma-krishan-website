@@ -46,7 +46,7 @@ export function Navbar() {
               "font-serif text-xl font-bold transition-colors",
               isScrolled ? "text-primary" : "text-primary-foreground"
             )}>
-              KAMS & Co
+              Kamsco
             </span>
             <span className={cn(
               "text-xs tracking-wider transition-colors",

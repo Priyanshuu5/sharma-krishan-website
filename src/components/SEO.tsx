@@ -13,11 +13,11 @@ export function SEO({
   title,
   description,
   ogType = "website",
-  ogImage = "https://kamsandco.com/og-image.jpg",
+  ogImage = "https://kamsco.in/og-image.jpg",
   schemaMarkup,
 }: SEOProps) {
   const location = useLocation();
-  const canonicalUrl = `https://kamsandco.com${location.pathname}`;
+  const canonicalUrl = `https://kamsco.in${location.pathname}`;
 
   useEffect(() => {
     // 1. Title

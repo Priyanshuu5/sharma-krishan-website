@@ -10,36 +10,36 @@ const contactSchema = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://kamsandco.com/contact/#breadcrumb",
+      "@id": "https://kamsco.in/contact/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://kamsandco.com/"
+          "item": "https://kamsco.in/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Contact",
-          "item": "https://kamsandco.com/contact"
+          "item": "https://kamsco.in/contact"
         }
       ]
     },
     {
       "@type": "ContactPage",
-      "@id": "https://kamsandco.com/contact/#webpage",
-      "url": "https://kamsandco.com/contact",
-      "name": "Contact Us | Sector 18 Noida - KAMS & Co",
-      "description": "Get in touch with KAMS & Co. Call +91 98765 43210 or email info@kamsandco.com to discuss your taxation, GST, and audit requirements.",
+      "@id": "https://kamsco.in/contact/#webpage",
+      "url": "https://kamsco.in/contact",
+      "name": "Contact Us | Sector 18 Noida - Kamsco",
+      "description": "Get in touch with Kamsco. Call +91 98765 43210 or email info@kamsco.in to discuss your taxation, GST, and audit requirements.",
       "breadcrumb": {
-        "@id": "https://kamsandco.com/contact/#breadcrumb"
+        "@id": "https://kamsco.in/contact/#breadcrumb"
       },
       "mainEntity": {
         "@type": "AccountingService",
-        "name": "KAMS & Co",
+        "name": "Kamsco",
         "telephone": "+91-9876543210",
-        "email": "info@kamsandco.com",
+        "email": "info@kamsco.in",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "123, Business Plaza, Sector 18",
@@ -71,7 +71,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@kamsandco.com", "support@kamsandco.com"],
+    details: ["info@kamsco.in", "support@kamsco.in"],
   },
   {
     icon: Clock,
@@ -103,8 +103,8 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact KAMS & Co | CA Firm in Sector 18, Noida"
-        description="Contact KAMS & Co in Sector 18, Noida. Call +91 98765 43210 or email info@kamsandco.com for expert taxation, GST, and audit consulting."
+        title="Contact Kamsco | CA Firm in Sector 18, Noida"
+        description="Contact Kamsco in Sector 18, Noida. Call +91 98765 43210 or email info@kamsco.in for expert taxation, GST, and audit consulting."
         schemaMarkup={contactSchema}
       />
       {/* Hero Section */}

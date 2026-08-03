@@ -12,8 +12,8 @@ const NotFound = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">
       <SEO
-        title="404 Page Not Found | KAMS & Co"
-        description="The page you are looking for does not exist on KAMS & Co. Return to the homepage to access our taxation and accounting services."
+        title="404 Page Not Found | Kamsco"
+        description="The page you are looking for does not exist on Kamsco. Return to the homepage to access our taxation and accounting services."
       />
       <div className="text-center">
         <h1 className="mb-4 text-4xl font-bold">404</h1>

@@ -10,21 +10,21 @@ const homeSchema = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://kamsandco.com/#website",
-      "url": "https://kamsandco.com/",
-      "name": "KAMS & Co",
+      "@id": "https://kamsco.in/#website",
+      "url": "https://kamsco.in/",
+      "name": "Kamsco",
       "description": "Expert Chartered Accountants in Noida, Delhi NCR providing taxation, audit, GST registration, RERA compliance, and financial advisory services.",
       "publisher": {
-        "@id": "https://kamsandco.com/#organization"
+        "@id": "https://kamsco.in/#organization"
       }
     },
     {
       "@type": "AccountingService",
-      "@id": "https://kamsandco.com/#organization",
-      "name": "KAMS & Co",
-      "url": "https://kamsandco.com/",
+      "@id": "https://kamsco.in/#organization",
+      "name": "Kamsco",
+      "url": "https://kamsco.in/",
       "telephone": "+91-9876543210",
-      "email": "info@kamsandco.com",
+      "email": "info@kamsco.in",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "123, Business Plaza, Sector 18",
@@ -57,7 +57,7 @@ const homeSchema = {
         "name": "CA Krishan Kumar Sharma"
       },
       "priceRange": "$$",
-      "image": "https://kamsandco.com/og-image.jpg"
+      "image": "https://kamsco.in/og-image.jpg"
     }
   ]
 };
@@ -66,7 +66,7 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="KAMS & Co | Chartered Accountants in Noida, Delhi NCR"
+        title="Kamsco | Chartered Accountants in Noida, Delhi NCR"
         description="Professional Chartered Accountants in Sector 18, Noida. Expert services for Income Tax Filing, GST, Audit, RERA compliance, and Financial Advisory."
         schemaMarkup={homeSchema}
       />
