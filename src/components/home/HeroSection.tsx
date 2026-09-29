@@ -77,9 +77,9 @@ export function HeroSection() {
           >
             {/* Eyebrow */}
             <motion.div variants={itemV} className="flex items-center gap-3 mb-8">
-              <div className="flex items-center gap-2.5 px-4 py-2 rounded border border-white/20 bg-white/8">
-                <Award className="w-3.5 h-3.5" style={{ color: "#E8920A" }} />
-                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80">
+              <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded border border-white/20 bg-white/10">
+                <img src="/ca-logo.png" alt="CA India Emblem" className="h-5 w-auto bg-white p-0.5 rounded object-contain" />
+                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white">
                   ICAI Registered Firm · India
                 </span>
               </div>
@@ -91,7 +91,7 @@ export function HeroSection() {
               className="font-serif text-white leading-[1.06] mb-6"
               style={{ fontSize: "clamp(2.8rem, 5.5vw, 4.8rem)", letterSpacing: "-0.025em" }}
             >
-              KAMS <span style={{ color: "#E8920A" }}>&</span> Co<br />
+              KAMS <span style={{ color: "#E8920A" }}>&</span> Co.<br />
               <span className="font-light text-white/80">Chartered</span>{" "}
               <span className="font-light italic text-white/65">Accountants</span>
             </motion.h1>
@@ -147,12 +147,11 @@ export function HeroSection() {
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-lg flex items-center justify-center font-serif font-bold text-lg text-white shadow-lg flex-shrink-0"
-                    style={{ background: "#E8920A" }}>
-                    K
+                  <div className="h-11 px-2 py-1 bg-white rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                    <img src="/ca-logo.png" alt="CA India Emblem" className="h-9 w-auto object-contain" />
                   </div>
                   <div>
-                    <p className="font-sans font-bold text-white text-sm tracking-wide">KAMS & Co</p>
+                    <p className="font-sans font-bold text-white text-sm tracking-wide">KAMS & Co.</p>
                     <p className="text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5" style={{ color: "#E8920A" }}>Chartered Accountants</p>
                   </div>
                 </div>

@@ -48,7 +48,7 @@ export function WhyChooseUsSection() {
           className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 lg:mb-20"
         >
           <div>
-            <span className="text-eyebrow text-accent text-[11px]">Why KAMS & Co</span>
+            <span className="text-eyebrow text-accent text-[11px]">Why KAMS & Co.</span>
             <h2 className="text-headline font-serif text-foreground mt-4">
               Why Choose<br />
               <span className="italic font-light text-foreground/60">Our Firm?</span>
@@ -57,7 +57,7 @@ export function WhyChooseUsSection() {
           <div className="lg:max-w-xs">
             <div className="w-12 h-[3px] bg-gradient-gold mb-5 rounded-full" />
             <p className="text-muted-foreground text-base font-light leading-relaxed">
-              Four reasons that set KAMS & Co apart from the field — and why 200+ businesses trust us.
+              Four reasons that set KAMS & Co. apart from the field — and why 200+ businesses trust us.
             </p>
           </div>
         </motion.div>

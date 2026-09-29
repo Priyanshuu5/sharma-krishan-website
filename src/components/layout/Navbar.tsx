@@ -45,8 +45,9 @@ export function Navbar() {
               +91 97823-13223
             </a>
           </div>
-          <div className="flex items-center gap-2">
-            <span className="text-white/50 text-[10px] uppercase tracking-widest font-medium">ICAI Registered Firm</span>
+          <div className="flex items-center gap-2 bg-white/10 px-2.5 py-1 rounded">
+            <img src="/ca-logo.png" alt="CA India Logo" className="h-5 w-auto bg-white p-0.5 rounded object-contain" />
+            <span className="text-white/90 text-[10px] uppercase tracking-widest font-semibold">ICAI Registered Firm</span>
           </div>
         </div>
       </div>
@@ -63,13 +64,12 @@ export function Navbar() {
 
             {/* Brand */}
             <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-11 h-11 rounded flex items-center justify-center font-serif font-bold text-lg text-white transition-all duration-300 shadow-md"
-                style={{ background: "#00365c" }}>
-                K
+              <div className="h-11 px-2.5 py-1 bg-white rounded flex items-center justify-center border border-gray-200 shadow-sm hover:border-gray-300 transition-colors">
+                <img src="/ca-logo.png" alt="CA India Logo" className="h-9 w-auto object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-sans text-[15px] font-extrabold tracking-wide leading-none text-teal" style={{ color: "#00365c" }}>
-                  KAMS & Co
+                  KAMS & Co.
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5" style={{ color: "#E8920A" }}>
                   Chartered Accountants

@@ -28,7 +28,7 @@ const servicesSchema = {
       "@type": "WebPage",
       "@id": "https://kamsco.in/services/#webpage",
       "url": "https://kamsco.in/services",
-      "name": "Services | KAMS & Co Chartered Accountants",
+      "name": "Services | KAMS & Co. Chartered Accountants",
       "description": "Comprehensive CA services: Audit & Assurance, Corporate Advisory, Taxation, and Compliance & Regulatory services for businesses worldwide.",
     }
   ]
@@ -107,8 +107,8 @@ const Services = () => {
   return (
     <Layout>
       <SEO
-        title="Services | KAMS & Co Chartered Accountants"
-        description="Comprehensive CA services from KAMS & Co: Audit & Assurance, Corporate Advisory, Taxation Services, and Compliance & Regulatory management for businesses worldwide."
+        title="Services | KAMS & Co. Chartered Accountants"
+        description="Comprehensive CA services from KAMS & Co.: Audit & Assurance, Corporate Advisory, Taxation Services, and Compliance & Regulatory management for businesses worldwide."
         schemaMarkup={servicesSchema}
       />
 

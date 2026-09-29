@@ -50,7 +50,7 @@ export function AboutSection() {
             className="lg:col-span-5"
           >
             <motion.span variants={itemV} className="text-eyebrow text-accent text-[11px]">
-              About KAMS & Co
+              About KAMS & Co.
             </motion.span>
 
             <motion.h2 variants={itemV} className="text-headline font-serif text-foreground mt-4 mb-6">
@@ -60,7 +60,7 @@ export function AboutSection() {
             <motion.div variants={itemV} className="w-16 h-[3px] bg-gradient-gold mb-8 rounded-full" />
 
             <motion.p variants={itemV} className="text-muted-foreground text-lg font-light leading-relaxed mb-10 max-w-md">
-              KAMS & Co is a firm built on a singular belief: that every business deserves expert financial guidance that is strategic, transparent, and deeply personal.
+              KAMS & Co. is a firm built on a singular belief: that every business deserves expert financial guidance that is strategic, transparent, and deeply personal.
             </motion.p>
 
             <motion.div variants={itemV}>
@@ -122,7 +122,7 @@ export function AboutSection() {
                     "A commitment to delivering results, ensuring regulatory compliance, and driving business success — for every client, every engagement."
                   </p>
                   <footer className="mt-3">
-                    <span className="text-eyebrow text-accent text-[10px]">— KAMS & Co, Core Philosophy</span>
+                    <span className="text-eyebrow text-accent text-[10px]">— KAMS & Co., Core Philosophy</span>
                   </footer>
                 </blockquote>
               </div>

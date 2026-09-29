@@ -12,8 +12,8 @@ const teamSchema = {
       "@type": "AboutPage",
       "@id": "https://kamsco.in/team/#webpage",
       "url": "https://kamsco.in/team",
-      "name": "Our Expert CA Team - KAMS & Co",
-      "description": "Meet the four Chartered Accountant partners at KAMS & Co.",
+      "name": "Our Expert CA Team - KAMS & Co.",
+      "description": "Meet the Chartered Accountant partners at KAMS & Co.",
     }
   ]
 };
@@ -106,8 +106,8 @@ const Team = () => {
   return (
     <Layout>
       <SEO
-        title="Our Expert CA Team | KAMS & Co Chartered Accountants"
-        description="Meet the four expert Chartered Accountant partners at KAMS & Co — CA Mohan Lal Sharma, CA Akanksha Tripathi, CA Komal Sharma, and CA Krishan Kumar Sharma."
+        title="Our Expert CA Team | KAMS & Co. Chartered Accountants"
+        description="Meet the four expert Chartered Accountant partners at KAMS & Co. — CA Mohan Lal Sharma, CA Akanksha Tripathi, CA Komal Sharma, and CA Krishan Kumar Sharma."
         schemaMarkup={teamSchema}
       />
 
@@ -144,9 +144,8 @@ const Team = () => {
           return (
             <section
               key={partner.name}
-              className={`py-10 lg:py-14 border-b border-border/40 ${
-                isEven ? "bg-background" : "bg-secondary"
-              }`}
+              className={`py-10 lg:py-14 border-b border-border/40 ${isEven ? "bg-background" : "bg-secondary"
+                }`}
             >
               <div className="container mx-auto px-6 max-w-7xl">
                 <motion.div
@@ -154,9 +153,8 @@ const Team = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                  className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-start ${
-                    !isEven ? "lg:[direction:rtl] [direction:ltr]" : ""
-                  }`}
+                  className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-start ${!isEven ? "lg:[direction:rtl] [direction:ltr]" : ""
+                    }`}
                 >
                   {/* Avatar column */}
                   <div className="lg:col-span-4 lg:[direction:ltr]">
@@ -178,9 +176,8 @@ const Team = () => {
                         <div className="pt-10 pb-2 relative z-10">
                           <div className="absolute inset-0 pattern-dots opacity-[0.04] text-white pointer-events-none" />
                           <div
-                            className={`w-28 h-28 mx-auto rounded-xl flex items-center justify-center shadow-gold animate-float ${
-                              partner.accentDark ? "bg-gradient-gold" : "bg-navy-lighter border border-white/20"
-                            }`}
+                            className={`w-28 h-28 mx-auto rounded-xl flex items-center justify-center shadow-gold animate-float ${partner.accentDark ? "bg-gradient-gold" : "bg-navy-lighter border border-white/20"
+                              }`}
                             style={{ animationDelay: `${index * 0.6}s` }}
                           >
                             <span className="font-serif font-bold text-4xl text-white">{partner.initials}</span>
@@ -288,7 +285,7 @@ const Team = () => {
               <span className="italic text-white/65">Together</span>
             </h2>
             <p className="text-white/55 mb-10 max-w-xl mx-auto text-lg font-light font-sans leading-relaxed">
-              Schedule a consultation to discuss how KAMS & Co can support your business financial needs.
+              Schedule a consultation to discuss how KAMS & Co. can support your business financial needs.
             </p>
             <Button asChild size="lg"
               className="bg-accent hover:bg-gold-dark text-accent-foreground hover:text-white text-xs uppercase tracking-widest font-bold px-10 py-7 rounded-sm shadow-gold active:scale-[0.98]">

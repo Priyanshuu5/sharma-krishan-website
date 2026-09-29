@@ -23,12 +23,12 @@ export function Footer() {
           {/* Brand Section */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 flex items-center justify-center bg-accent text-accent-foreground font-serif font-bold text-base rounded">
-                K
+              <div className="h-10 px-2 py-1 bg-white rounded flex items-center justify-center border border-white/20 shadow-sm">
+                <img src="/ca-logo.png" alt="CA India Emblem" className="h-8 w-auto object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-sans text-base font-bold tracking-wider leading-none text-primary-foreground">
-                  KAMS & Co
+                  KAMS & Co.
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.2em] font-semibold text-accent mt-0.5">
                   Chartered Accountants

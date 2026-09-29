@@ -14,7 +14,7 @@ const homeSchema = {
       "@type": "WebSite",
       "@id": "https://kamsco.in/#website",
       "url": "https://kamsco.in/",
-      "name": "KAMS & Co Chartered Accountants",
+      "name": "KAMS & Co. Chartered Accountants",
       "description": "Expert Chartered Accountants providing taxation, audit, GST compliance, corporate advisory, and financial advisory services worldwide.",
       "publisher": {
         "@id": "https://kamsco.in/#organization"
@@ -23,7 +23,7 @@ const homeSchema = {
     {
       "@type": "AccountingService",
       "@id": "https://kamsco.in/#organization",
-      "name": "KAMS & Co Chartered Accountants",
+      "name": "KAMS & Co. Chartered Accountants",
       "url": "https://kamsco.in/",
       "telephone": "+91-97823-13223",
       "founders": [
@@ -52,8 +52,8 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="KAMS & Co | Chartered Accountants — Taxation, Audit & Financial Advisory"
-        description="KAMS & Co Chartered Accountants — Expert services in taxation, audit, GST compliance, corporate advisory, and international financial planning worldwide."
+        title="KAMS & Co. | Chartered Accountants — Taxation, Audit & Financial Advisory"
+        description="KAMS & Co. Chartered Accountants — Expert services in taxation, audit, GST compliance, corporate advisory, and international financial planning worldwide."
         schemaMarkup={homeSchema}
       />
       <HeroSection />
