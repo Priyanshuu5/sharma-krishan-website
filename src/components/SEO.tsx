@@ -15,9 +15,11 @@ export function SEO({
   ogType = "website",
   ogImage = "https://kamsco.in/og-image.jpg",
   schemaMarkup,
-}: SEOProps) {
+  noindex = false,
+}: SEOProps & { noindex?: boolean }) {
   const location = useLocation();
-  const canonicalUrl = `https://kamsco.in${location.pathname}`;
+  const cleanPath = location.pathname.replace(/\/+$/, "");
+  const canonicalUrl = `https://kamsco.in${cleanPath === "" ? "/" : cleanPath}`;
 
   useEffect(() => {
     // 1. Title
@@ -34,7 +36,14 @@ export function SEO({
       element.setAttribute("content", content);
     };
 
-    // 2. Primary & Open Graph & Twitter Meta Tags
+    // 2. Robots Directive
+    if (noindex) {
+      setMetaTag("name", "robots", "noindex, nofollow");
+    } else {
+      setMetaTag("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
+    }
+
+    // 3. Primary & Open Graph & Twitter Meta Tags
     setMetaTag("name", "description", description);
     setMetaTag("property", "og:title", title);
     setMetaTag("property", "og:description", description);
@@ -48,7 +57,7 @@ export function SEO({
     setMetaTag("property", "twitter:image", ogImage);
     setMetaTag("property", "twitter:url", canonicalUrl);
 
-    // 3. Canonical Link
+    // 4. Canonical Link
     let canonicalLink = document.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
       canonicalLink = document.createElement("link");
@@ -57,7 +66,7 @@ export function SEO({
     }
     canonicalLink.setAttribute("href", canonicalUrl);
 
-    // 4. Schema JSON-LD Injection
+    // 5. Schema JSON-LD Injection
     let schemaScript = document.getElementById("dynamic-schema-jsonld");
     if (schemaMarkup) {
       if (!schemaScript) {
@@ -72,7 +81,7 @@ export function SEO({
         schemaScript.remove();
       }
     }
-  }, [title, description, ogType, ogImage, canonicalUrl, schemaMarkup]);
+  }, [title, description, ogType, ogImage, canonicalUrl, schemaMarkup, noindex]);
 
   return null;
 }

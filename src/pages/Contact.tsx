@@ -30,19 +30,19 @@ const contactSchema = {
       "@type": "ContactPage",
       "@id": "https://kamsco.in/contact/#webpage",
       "url": "https://kamsco.in/contact",
-      "name": "Contact Us | Sector 18 Noida - Kamsco",
-      "description": "Get in touch with Kamsco. Call +91 98765 43210 or email info@kamsco.in to discuss your taxation, GST, and audit requirements.",
+      "name": "Contact Us | Sector 18 Noida — KAMS & Co. Chartered Accountants",
+      "description": "Get in touch with KAMS & Co. Call +91-97823-13223 or email info@kamsco.in for expert taxation, GST, and audit consulting in Sector 18, Noida.",
       "breadcrumb": {
         "@id": "https://kamsco.in/contact/#breadcrumb"
       },
       "mainEntity": {
         "@type": "AccountingService",
-        "name": "Kamsco",
-        "telephone": "+91-9876543210",
+        "name": "KAMS & Co. Chartered Accountants",
+        "telephone": "+91-97823-13223",
         "email": "info@kamsco.in",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "123, Business Plaza, Sector 18",
+          "streetAddress": "Sector 18",
           "addressLocality": "Noida",
           "addressRegion": "Uttar Pradesh",
           "postalCode": "201301",
@@ -61,17 +61,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["123, Business Plaza, Sector 18", "Noida, Uttar Pradesh - 201301"],
+    details: ["Sector 18, Noida", "Uttar Pradesh - 201301, India"],
   },
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 98765 43210", "+91 11 4567 8901"],
+    details: ["+91 97823-13223 (CA Mohan Lal Sharma)", "+91 98872-22002 (CA Akanksha Tripathi)"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@kamsco.in", "support@kamsco.in"],
+    details: ["info@kamsco.in"],
   },
   {
     icon: Clock,
@@ -103,8 +103,8 @@ const Contact = () => {
   return (
     <Layout>
       <SEO
-        title="Contact Kamsco | CA Firm in Sector 18, Noida"
-        description="Contact Kamsco in Sector 18, Noida. Call +91 98765 43210 or email info@kamsco.in for expert taxation, GST, and audit consulting."
+        title="Contact KAMS & Co. | CA Firm in Sector 18, Noida"
+        description="Contact KAMS & Co. Chartered Accountants in Sector 18, Noida. Call +91-97823-13223 or email info@kamsco.in for expert taxation, GST, and audit consulting."
         schemaMarkup={contactSchema}
       />
       {/* Hero Section */}
@@ -302,11 +302,11 @@ const Contact = () => {
             Connect immediately with our direct director line
           </p>
           <a
-            href="tel:+919876543210"
+            href="tel:+919782313223"
             className="inline-flex items-center gap-2 text-accent font-semibold text-lg hover:underline transition-all"
           >
             <Phone className="w-5 h-5" />
-            +91 98765 43210
+            +91 97823-13223
           </a>
         </div>
       </section>

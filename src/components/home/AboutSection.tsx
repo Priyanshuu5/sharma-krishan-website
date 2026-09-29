@@ -95,7 +95,7 @@ export function AboutSection() {
                   <div className="w-10 h-10 rounded bg-accent/8 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:border-accent transition-all duration-300 flex-shrink-0">
                     <point.icon className="w-4.5 h-4.5 text-accent group-hover:text-accent-foreground transition-colors" />
                   </div>
-                  <h4 className="font-sans font-semibold text-foreground text-base mb-2 leading-snug">{point.title}</h4>
+                  <h3 className="font-sans font-semibold text-foreground text-base mb-2 leading-snug">{point.title}</h3>
                   <p className="text-muted-foreground text-sm font-light leading-relaxed">{point.description}</p>
                 </motion.div>
               ))}

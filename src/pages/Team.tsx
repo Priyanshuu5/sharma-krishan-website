@@ -9,11 +9,60 @@ const teamSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "BreadcrumbList",
+      "@id": "https://kamsco.in/team/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kamsco.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Our Team",
+          "item": "https://kamsco.in/team"
+        }
+      ]
+    },
+    {
       "@type": "AboutPage",
       "@id": "https://kamsco.in/team/#webpage",
       "url": "https://kamsco.in/team",
-      "name": "Our Expert CA Team - KAMS & Co.",
-      "description": "Meet the Chartered Accountant partners at KAMS & Co.",
+      "name": "Our Expert CA Team | KAMS & Co. Chartered Accountants",
+      "description": "Meet the Chartered Accountant partners at KAMS & Co. — CA Mohan Lal Sharma, CA Akanksha Tripathi, CA Komal Sharma, and CA Krishan Kumar Sharma.",
+      "breadcrumb": { "@id": "https://kamsco.in/team/#breadcrumb" }
+    },
+    {
+      "@type": "Person",
+      "name": "CA Mohan Lal Sharma",
+      "jobTitle": "Partner, FCA",
+      "worksFor": { "@id": "https://kamsco.in/#organization" },
+      "telephone": "+91-97823-13223",
+      "knowsAbout": ["GST Consultancy", "Accounting Advisory", "Income Tax Planning", "Tax Authority Representation"]
+    },
+    {
+      "@type": "Person",
+      "name": "CA Akanksha Tripathi",
+      "jobTitle": "Partner, ACA",
+      "worksFor": { "@id": "https://kamsco.in/#organization" },
+      "telephone": "+91-98872-22002",
+      "knowsAbout": ["Financial Auditing", "Financial Statement Preparation", "Cost Controlling", "Internal Control Systems"]
+    },
+    {
+      "@type": "Person",
+      "name": "CA Komal Sharma",
+      "jobTitle": "Partner, ACA",
+      "worksFor": { "@id": "https://kamsco.in/#organization" },
+      "knowsAbout": ["International Taxation", "Cross-Border Accounting", "Offshore Account Management"]
+    },
+    {
+      "@type": "Person",
+      "name": "CA Krishan Kumar Sharma",
+      "jobTitle": "Partner, ACA",
+      "worksFor": { "@id": "https://kamsco.in/#organization" },
+      "knowsAbout": ["Corporate Tax Compliance", "Financial Advisory", "Business Structuring", "Regulatory Compliance"]
     }
   ]
 };
@@ -26,7 +75,7 @@ const partners = [
     credentials: "F.C.A. (India), M.COM., B. COM.",
     experience: "Post Qualification Experience of 5+ Years",
     initials: "MS",
-    image: "/mohan.jpg",
+    image: "/mohan.webp",
     phone: "+91-97823-13223",
     phoneHref: "tel:+919782313223",
     specializations: [
@@ -46,7 +95,7 @@ const partners = [
     credentials: "A.C.A. (India), B.COM.",
     experience: "Post Qualification Experience of 4 Years",
     initials: "AT",
-    image: "/akanksha.jpg",
+    image: "/akanksha.webp",
     phone: "+91-98872-22002",
     phoneHref: "tel:+919887222002",
     specializations: [
@@ -67,7 +116,7 @@ const partners = [
     credentials: "A.C.A. (India), B.COM.",
     experience: "Post Qualification Experience of 3 Years",
     initials: "KS",
-    image: "/komal.jpg",
+    image: "/komal.webp",
     phone: null,
     phoneHref: null,
     specializations: [
@@ -86,7 +135,7 @@ const partners = [
     credentials: "A.C.A. (India), B.COM.",
     experience: "Post Qualification Experience of 5+ Years",
     initials: "KR",
-    image: "/krishan.jpg",
+    image: "/krishan.webp",
     imageClassName: "scale-125 origin-top",
     phone: null,
     phoneHref: null,
@@ -166,7 +215,11 @@ const Team = () => {
                         <div className="relative w-full h-80 sm:h-96 overflow-hidden bg-navy-lighter group">
                           <img
                             src={partner.image}
-                            alt={partner.name}
+                            alt={`CA ${partner.name} - Partner at KAMS & Co.`}
+                            width="400"
+                            height="400"
+                            loading="lazy"
+                            decoding="async"
                             className={`w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105 ${partner.imageClassName || ""}`}
                           />
                           {/* Gradient transition to card content */}

@@ -10,7 +10,7 @@ const contacts = [
     phone: "+91-97823-13223",
     href: "tel:+919782313223",
     initials: "MS",
-    image: "/mohan.jpg",
+    image: "/mohan.webp",
     dark: true,
   },
   {
@@ -19,7 +19,7 @@ const contacts = [
     phone: "+91-98872-22002",
     href: "tel:+919887222002",
     initials: "AT",
-    image: "/akanksha.jpg",
+    image: "/akanksha.webp",
     dark: false,
   },
 ];
@@ -93,7 +93,11 @@ export function CTASection() {
                     {"image" in contact && contact.image ? (
                       <img
                         src={contact.image}
-                        alt={contact.name}
+                        alt={`CA ${contact.name} - Partner`}
+                        width="48"
+                        height="48"
+                        loading="lazy"
+                        decoding="async"
                         className="w-12 h-12 rounded-lg object-cover flex-shrink-0 border border-border/40 shadow-sm"
                       />
                     ) : (

@@ -46,7 +46,7 @@ export function Navbar() {
             </a>
           </div>
           <div className="flex items-center gap-2 bg-white/10 px-2.5 py-1 rounded">
-            <img src="/ca-logo.png" alt="CA India Logo" className="h-5 w-auto bg-white p-0.5 rounded object-contain" />
+            <img src="/ca-logo.webp" alt="CA India Emblem" width="20" height="20" loading="eager" className="h-5 w-auto bg-white p-0.5 rounded object-contain" />
             <span className="text-white/90 text-[10px] uppercase tracking-widest font-semibold">ICAI Registered Firm</span>
           </div>
         </div>
@@ -65,7 +65,7 @@ export function Navbar() {
             {/* Brand */}
             <Link to="/" className="flex items-center gap-3 group">
               <div className="h-11 px-2.5 py-1 bg-white rounded flex items-center justify-center border border-gray-200 shadow-sm hover:border-gray-300 transition-colors">
-                <img src="/ca-logo.png" alt="CA India Logo" className="h-9 w-auto object-contain" />
+                <img src="/ca-logo.webp" alt="KAMS & Co. Chartered Accountants Emblem" width="36" height="36" loading="eager" className="h-9 w-auto object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-sans text-[15px] font-extrabold tracking-wide leading-none text-teal" style={{ color: "#00365c" }}>

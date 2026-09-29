@@ -4,10 +4,10 @@ import { ArrowRight, CheckCircle, Award, Shield } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const partners = [
-  { name: "CA Mohan Lal Sharma",    credentials: "FCA, M.Com., B.Com.", initials: "MS", image: "/mohan.jpg" },
-  { name: "CA Akanksha Tripathi",   credentials: "ACA, B.Com.",          initials: "AT", image: "/akanksha.jpg" },
-  { name: "CA Komal Sharma",        credentials: "ACA, B.Com.",          initials: "KS", image: "/komal.jpg" },
-  { name: "CA Krishan Kumar Sharma",credentials: "ACA, B.Com.",          initials: "KR", image: "/krishan.jpg", imageClassName: "scale-125 origin-top" },
+  { name: "CA Mohan Lal Sharma",    credentials: "FCA, M.Com., B.Com.", initials: "MS", image: "/mohan.webp" },
+  { name: "CA Akanksha Tripathi",   credentials: "ACA, B.Com.",          initials: "AT", image: "/akanksha.webp" },
+  { name: "CA Komal Sharma",        credentials: "ACA, B.Com.",          initials: "KS", image: "/komal.webp" },
+  { name: "CA Krishan Kumar Sharma",credentials: "ACA, B.Com.",          initials: "KR", image: "/krishan.webp", imageClassName: "scale-125 origin-top" },
 ];
 
 const stats = [
@@ -78,7 +78,7 @@ export function HeroSection() {
             {/* Eyebrow */}
             <motion.div variants={itemV} className="flex items-center gap-3 mb-8">
               <div className="flex items-center gap-2.5 px-3.5 py-1.5 rounded border border-white/20 bg-white/10">
-                <img src="/ca-logo.png" alt="CA India Emblem" className="h-5 w-auto bg-white p-0.5 rounded object-contain" />
+                <img src="/ca-logo.webp" alt="CA India Emblem" width="24" height="20" loading="eager" decoding="async" className="h-5 w-auto bg-white p-0.5 rounded object-contain" />
                 <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-white">
                   ICAI Registered Firm · India
                 </span>
@@ -148,7 +148,7 @@ export function HeroSection() {
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="h-11 px-2 py-1 bg-white rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
-                    <img src="/ca-logo.png" alt="CA India Emblem" className="h-9 w-auto object-contain" />
+                    <img src="/ca-logo.webp" alt="CA India Emblem" width="36" height="36" loading="eager" decoding="async" className="h-9 w-auto object-contain" />
                   </div>
                   <div>
                     <p className="font-sans font-bold text-white text-sm tracking-wide">KAMS & Co.</p>
@@ -177,6 +177,10 @@ export function HeroSection() {
                     <img
                       src={p.image}
                       alt={p.name}
+                      width="44"
+                      height="44"
+                      loading="eager"
+                      decoding="async"
                       className={`w-11 h-11 rounded-lg object-cover flex-shrink-0 border border-white/20 shadow-md ${p.imageClassName || ""}`}
                     />
                   ) : (

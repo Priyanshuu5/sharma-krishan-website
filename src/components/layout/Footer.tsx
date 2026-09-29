@@ -24,7 +24,7 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <div className="h-10 px-2 py-1 bg-white rounded flex items-center justify-center border border-white/20 shadow-sm">
-                <img src="/ca-logo.png" alt="CA India Emblem" className="h-8 w-auto object-contain" />
+                <img src="/ca-logo.webp" alt="CA India Emblem" width="32" height="32" loading="lazy" className="h-8 w-auto object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-sans text-base font-bold tracking-wider leading-none text-primary-foreground">

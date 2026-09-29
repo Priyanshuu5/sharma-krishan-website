@@ -25,11 +25,61 @@ const servicesSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "BreadcrumbList",
+      "@id": "https://kamsco.in/services/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kamsco.in/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://kamsco.in/services"
+        }
+      ]
+    },
+    {
       "@type": "WebPage",
       "@id": "https://kamsco.in/services/#webpage",
       "url": "https://kamsco.in/services",
       "name": "Services | KAMS & Co. Chartered Accountants",
       "description": "Comprehensive CA services: Audit & Assurance, Corporate Advisory, Taxation, and Compliance & Regulatory services for businesses worldwide.",
+      "breadcrumb": { "@id": "https://kamsco.in/services/#breadcrumb" }
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://kamsco.in/services/#catalog",
+      "name": "Chartered Accountancy & Advisory Services",
+      "itemListElement": [
+        {
+          "@type": "Service",
+          "name": "Audit & Assurance Services",
+          "description": "Statutory audits, internal audits, compliance reviews, risk assessment, and fraud prevention frameworks.",
+          "provider": { "@id": "https://kamsco.in/#organization" }
+        },
+        {
+          "@type": "Service",
+          "name": "Corporate Advisory & Strategic Planning",
+          "description": "M&A advisory, business structuring, fundraising, IPO readiness, and cross-border consulting.",
+          "provider": { "@id": "https://kamsco.in/#organization" }
+        },
+        {
+          "@type": "Service",
+          "name": "Taxation Services",
+          "description": "Income tax planning, corporate tax compliance, GST advisory, and international tax structuring.",
+          "provider": { "@id": "https://kamsco.in/#organization" }
+        },
+        {
+          "@type": "Service",
+          "name": "Compliance & Regulatory Services",
+          "description": "ROC filings, Ind AS and US GAAP compliance, regulatory reporting, and offshore banking advisory.",
+          "provider": { "@id": "https://kamsco.in/#organization" }
+        }
+      ]
     }
   ]
 };

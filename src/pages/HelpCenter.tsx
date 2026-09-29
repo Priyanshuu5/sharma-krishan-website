@@ -30,8 +30,8 @@ const helpCenterSchema = {
       "@type": "WebPage",
       "@id": "https://kamsco.in/help-center/#webpage",
       "url": "https://kamsco.in/help-center",
-      "name": "Document Upload Center & Support - Kamsco",
-      "description": "Securely submit your financial documents, receipts, tax statements, and audit reports to the Kamsco team.",
+      "name": "Document Upload Center & Support | KAMS & Co. Chartered Accountants",
+      "description": "Securely submit your financial documents, receipts, tax statements, and audit reports to the KAMS & Co. compliance team.",
       "breadcrumb": {
         "@id": "https://kamsco.in/help-center/#breadcrumb"
       }
