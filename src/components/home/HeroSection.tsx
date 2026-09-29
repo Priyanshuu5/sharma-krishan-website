@@ -4,10 +4,10 @@ import { ArrowRight, CheckCircle, Award, Shield } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const partners = [
-  { name: "CA Mohan Lal Sharma",    credentials: "FCA, M.Com., B.Com.", initials: "MS" },
-  { name: "CA Akanksha Tripathi",   credentials: "ACA, B.Com.",          initials: "AT" },
-  { name: "CA Komal Sharma",        credentials: "ACA, B.Com.",          initials: "KS" },
-  { name: "CA Krishan Kumar Sharma",credentials: "ACA, B.Com.",          initials: "KR" },
+  { name: "CA Mohan Lal Sharma",    credentials: "FCA, M.Com., B.Com.", initials: "MS", image: "/mohan.jpg" },
+  { name: "CA Akanksha Tripathi",   credentials: "ACA, B.Com.",          initials: "AT", image: "/akanksha.jpg" },
+  { name: "CA Komal Sharma",        credentials: "ACA, B.Com.",          initials: "KS", image: "/komal.jpg" },
+  { name: "CA Krishan Kumar Sharma",credentials: "ACA, B.Com.",          initials: "KR", image: "/krishan.jpg", imageClassName: "scale-125 origin-top" },
 ];
 
 const stats = [
@@ -174,15 +174,23 @@ export function HeroSection() {
                   whileHover={{ x: 4 }}
                   className="bg-white/8 border border-white/15 rounded-xl p-4 flex items-center gap-4 hover:bg-white/14 hover:border-white/30 transition-all duration-300 group cursor-default"
                 >
-                  <div
-                    className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 animate-float text-white font-serif font-bold text-sm"
-                    style={{
-                      background: i % 2 === 0 ? "#E8920A" : "rgba(255,255,255,0.15)",
-                      animationDelay: `${i * 0.7}s`,
-                    }}
-                  >
-                    {p.initials}
-                  </div>
+                  {p.image ? (
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className={`w-11 h-11 rounded-lg object-cover flex-shrink-0 border border-white/20 shadow-md ${p.imageClassName || ""}`}
+                    />
+                  ) : (
+                    <div
+                      className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 animate-float text-white font-serif font-bold text-sm"
+                      style={{
+                        background: i % 2 === 0 ? "#E8920A" : "rgba(255,255,255,0.15)",
+                        animationDelay: `${i * 0.7}s`,
+                      }}
+                    >
+                      {p.initials}
+                    </div>
+                  )}
                   <div className="flex-1 min-w-0">
                     <p className="font-sans font-semibold text-white text-sm truncate group-hover:text-gold-light transition-colors" style={{ color: i % 2 === 0 ? "rgba(255,255,255,0.95)" : "rgba(255,255,255,0.80)" }}>
                       {p.name}

@@ -10,6 +10,7 @@ const contacts = [
     phone: "+91-97823-13223",
     href: "tel:+919782313223",
     initials: "MS",
+    image: "/mohan.jpg",
     dark: true,
   },
   {
@@ -18,6 +19,7 @@ const contacts = [
     phone: "+91-98872-22002",
     href: "tel:+919887222002",
     initials: "AT",
+    image: "/akanksha.jpg",
     dark: false,
   },
 ];
@@ -88,11 +90,19 @@ export function CTASection() {
                     transition={{ type: "spring", stiffness: 320, damping: 22 }}
                     className="flex items-center gap-5 p-6 bg-card border border-border/60 rounded-xl hover:border-accent/40 hover:shadow-card-hover transition-all duration-300 group text-left min-w-[240px]"
                   >
-                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-gold ${
-                      contact.dark ? "bg-gradient-gold" : "bg-primary"
-                    }`}>
-                      <span className="font-serif font-bold text-base text-white">{contact.initials}</span>
-                    </div>
+                    {"image" in contact && contact.image ? (
+                      <img
+                        src={contact.image}
+                        alt={contact.name}
+                        className="w-12 h-12 rounded-lg object-cover flex-shrink-0 border border-border/40 shadow-sm"
+                      />
+                    ) : (
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-gold ${
+                        contact.dark ? "bg-gradient-gold" : "bg-primary"
+                      }`}>
+                        <span className="font-serif font-bold text-base text-white">{contact.initials}</span>
+                      </div>
+                    )}
                     <div>
                       <p className="text-eyebrow text-muted-foreground text-[9px] mb-1">{contact.title}</p>
                       <p className="text-base font-semibold text-foreground font-sans group-hover:text-accent transition-colors leading-tight">

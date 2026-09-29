@@ -53,10 +53,10 @@ export function Navbar() {
 
       {/* Main Nav */}
       <div className={cn(
-        "transition-all duration-400",
+        "bg-white transition-all duration-400",
         isScrolled
-          ? "bg-white shadow-md py-3"
-          : "bg-white/98 border-b border-gray-100 py-4"
+          ? "shadow-md py-3"
+          : "border-b border-gray-100 py-4"
       )}>
         <div className="container mx-auto px-6 max-w-7xl">
           <nav className="flex items-center justify-between">

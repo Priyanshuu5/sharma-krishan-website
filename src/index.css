@@ -125,6 +125,7 @@
   .bg-teal-light { background-color: #005a96; }
   .bg-teal-gradient { background: var(--gradient-teal); }
   .bg-hero-gradient { background: var(--gradient-hero); }
+  .bg-gradient-hero { background: linear-gradient(135deg, #00365c 0%, #00487a 50%, #005a96 100%); }
   .text-teal { color: #00365c; }
   .text-gold { color: hsl(var(--accent)); }
   .bg-gradient-gold { background-image: var(--gradient-gold); }

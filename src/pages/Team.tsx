@@ -26,6 +26,7 @@ const partners = [
     credentials: "F.C.A. (India), M.COM., B. COM.",
     experience: "Post Qualification Experience of 5+ Years",
     initials: "MS",
+    image: "/mohan.jpg",
     phone: "+91-97823-13223",
     phoneHref: "tel:+919782313223",
     specializations: [
@@ -45,6 +46,7 @@ const partners = [
     credentials: "A.C.A. (India), B.COM.",
     experience: "Post Qualification Experience of 4 Years",
     initials: "AT",
+    image: "/akanksha.jpg",
     phone: "+91-98872-22002",
     phoneHref: "tel:+919887222002",
     specializations: [
@@ -65,6 +67,7 @@ const partners = [
     credentials: "A.C.A. (India), B.COM.",
     experience: "Post Qualification Experience of 3 Years",
     initials: "KS",
+    image: "/komal.jpg",
     phone: null,
     phoneHref: null,
     specializations: [
@@ -83,6 +86,8 @@ const partners = [
     credentials: "A.C.A. (India), B.COM.",
     experience: "Post Qualification Experience of 5+ Years",
     initials: "KR",
+    image: "/krishan.jpg",
+    imageClassName: "scale-125 origin-top",
     phone: null,
     phoneHref: null,
     specializations: [
@@ -106,8 +111,11 @@ const Team = () => {
         schemaMarkup={teamSchema}
       />
 
-      {/* Hero */}
-      <section className="pt-40 pb-24 bg-gradient-hero relative overflow-hidden">
+      {/* Hero Banner */}
+      <section
+        className="pt-28 lg:pt-32 pb-10 lg:pb-12 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #00365c 0%, #00487a 50%, #005a96 100%)" }}
+      >
         <div className="absolute inset-0 pattern-dots opacity-[0.06] text-white pointer-events-none" />
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold opacity-70" />
         <div className="absolute top-0 right-0 w-[500px] h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
@@ -118,12 +126,11 @@ const Team = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <span className="text-eyebrow text-accent text-[11px]">Our Partners</span>
-            <h1 className="text-display font-serif text-white mt-5 mb-6 leading-[1.04]">
-              Meet the<br />
-              <span className="italic font-light text-white/70">Team</span>
+            <span className="text-eyebrow text-accent text-[11px] font-bold uppercase tracking-widest">Our Partners</span>
+            <h1 className="text-display font-serif text-white mt-3 mb-4 leading-[1.04]">
+              Meet the <span className="italic font-light text-accent">Team</span>
             </h1>
-            <p className="text-white/60 text-xl font-light leading-relaxed max-w-xl">
+            <p className="text-white/75 text-lg md:text-xl font-light leading-relaxed max-w-xl">
               Four dedicated Chartered Accountants with complementary expertise — united by a commitment to delivering world-class financial services.
             </p>
           </motion.div>
@@ -137,7 +144,7 @@ const Team = () => {
           return (
             <section
               key={partner.name}
-              className={`py-24 lg:py-32 border-b border-border/40 ${
+              className={`py-10 lg:py-14 border-b border-border/40 ${
                 isEven ? "bg-background" : "bg-secondary"
               }`}
             >
@@ -153,51 +160,70 @@ const Team = () => {
                 >
                   {/* Avatar column */}
                   <div className="lg:col-span-4 lg:[direction:ltr]">
-                    <div className="bg-primary rounded-lg p-10 text-center relative overflow-hidden shadow-xl">
-                      <div className="absolute inset-0 pattern-dots opacity-[0.04] text-white pointer-events-none" />
+                    <div className="bg-primary rounded-2xl text-center relative overflow-hidden shadow-xl border border-white/10 flex flex-col">
                       <div className="absolute top-0 right-0 w-40 h-40 bg-accent/8 rounded-full blur-2xl pointer-events-none" />
 
-                      <div className="relative z-10">
-                        {/* Monogram */}
-                        <div
-                          className={`w-28 h-28 mx-auto mb-6 rounded-xl flex items-center justify-center shadow-gold animate-float ${
-                            partner.accentDark ? "bg-gradient-gold" : "bg-navy-lighter border border-white/20"
-                          }`}
-                          style={{ animationDelay: `${index * 0.6}s` }}
-                        >
-                          <span className="font-serif font-bold text-4xl text-white">{partner.initials}</span>
+                      {/* Top Media: Full space photo or monogram */}
+                      {partner.image ? (
+                        <div className="relative w-full h-80 sm:h-96 overflow-hidden bg-navy-lighter group">
+                          <img
+                            src={partner.image}
+                            alt={partner.name}
+                            className={`w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105 ${partner.imageClassName || ""}`}
+                          />
+                          {/* Gradient transition to card content */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent" />
+                        </div>
+                      ) : (
+                        <div className="pt-10 pb-2 relative z-10">
+                          <div className="absolute inset-0 pattern-dots opacity-[0.04] text-white pointer-events-none" />
+                          <div
+                            className={`w-28 h-28 mx-auto rounded-xl flex items-center justify-center shadow-gold animate-float ${
+                              partner.accentDark ? "bg-gradient-gold" : "bg-navy-lighter border border-white/20"
+                            }`}
+                            style={{ animationDelay: `${index * 0.6}s` }}
+                          >
+                            <span className="font-serif font-bold text-4xl text-white">{partner.initials}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Content under photo/monogram */}
+                      <div className="p-8 relative z-10 flex-1 flex flex-col justify-between">
+                        <div>
+                          <span className="text-eyebrow text-accent text-[10px]">{partner.title}</span>
+                          <h3 className="font-serif text-2xl text-white font-medium mt-2 mb-1">
+                            CA {partner.name}
+                          </h3>
+                          <p className="text-white/50 text-sm font-sans mb-6">{partner.credentials}</p>
+
+                          {/* Qualification badges */}
+                          <div className="flex justify-center flex-wrap gap-2 mb-6">
+                            {partner.qualifications.map((q) => (
+                              <span key={q}
+                                className="px-3 py-1.5 bg-white/8 border border-white/15 text-white/75 text-[10px] uppercase tracking-wider font-semibold rounded-sm">
+                                {q}
+                              </span>
+                            ))}
+                          </div>
                         </div>
 
-                        <span className="text-eyebrow text-accent text-[10px]">{partner.title}</span>
-                        <h3 className="font-serif text-2xl text-white font-medium mt-2 mb-1">
-                          CA {partner.name}
-                        </h3>
-                        <p className="text-white/50 text-sm font-sans mb-6">{partner.credentials}</p>
+                        <div>
+                          {/* Experience */}
+                          <div className="border-t border-white/10 pt-5 mb-4">
+                            <p className="text-eyebrow text-white/35 text-[9px] mb-1">Experience</p>
+                            <p className="text-white/70 text-sm font-sans font-light">{partner.experience}</p>
+                          </div>
 
-                        {/* Qualification badges */}
-                        <div className="flex justify-center flex-wrap gap-2 mb-6">
-                          {partner.qualifications.map((q) => (
-                            <span key={q}
-                              className="px-3 py-1.5 bg-white/8 border border-white/15 text-white/75 text-[10px] uppercase tracking-wider font-semibold rounded-sm">
-                              {q}
-                            </span>
-                          ))}
+                          {/* Phone */}
+                          {partner.phone && (
+                            <a href={partner.phoneHref!}
+                              className="inline-flex items-center gap-2 text-accent hover:text-gold-light transition-colors text-sm font-semibold">
+                              <Phone className="w-3.5 h-3.5" />
+                              {partner.phone}
+                            </a>
+                          )}
                         </div>
-
-                        {/* Experience */}
-                        <div className="border-t border-white/10 pt-5 mb-4">
-                          <p className="text-eyebrow text-white/35 text-[9px] mb-1">Experience</p>
-                          <p className="text-white/70 text-sm font-sans font-light">{partner.experience}</p>
-                        </div>
-
-                        {/* Phone */}
-                        {partner.phone && (
-                          <a href={partner.phoneHref!}
-                            className="inline-flex items-center gap-2 text-accent hover:text-gold-light transition-colors text-sm font-semibold">
-                            <Phone className="w-3.5 h-3.5" />
-                            {partner.phone}
-                          </a>
-                        )}
                       </div>
                     </div>
                   </div>
