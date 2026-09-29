@@ -1,123 +1,132 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight, Globe, Target, Users, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const features = [
-  "Expert team of qualified Chartered Accountants",
-  "Personalized attention to every client",
-  "Transparent and competitive pricing",
-  "8+ years of industry experience",
-  "100% compliance and accuracy guaranteed",
-  "End-to-end financial solutions",
+const aboutPoints = [
+  {
+    icon: Users,
+    title: "Diverse Expert Team",
+    description: "A diverse team of Chartered Accountants with combined experience in finance, taxation, compliance, advisory, and cost management — each partner bringing unique depth.",
+  },
+  {
+    icon: Star,
+    title: "Unique Specializations",
+    description: "From statutory audits and offshore accounting to GST advisory, international taxation, and cross-border structuring — we cover every financial dimension.",
+  },
+  {
+    icon: Globe,
+    title: "World-Class Services",
+    description: "Our goal is to provide world-class services to clients worldwide, helping businesses navigate complex financial, taxation, and compliance challenges.",
+  },
+  {
+    icon: Target,
+    title: "Results-Driven Commitment",
+    description: "A commitment to delivering results, ensuring regulatory compliance, and driving sustainable business success — every client, every engagement.",
+  },
 ];
+
+const containerV = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
+const itemV = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+};
 
 export function AboutSection() {
   return (
-    <section className="py-20 lg:py-32 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image/Visual Side */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative rounded-2xl overflow-hidden">
-              {/* Decorative Background */}
-              <div className="aspect-[4/3] bg-gradient-navy rounded-2xl">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gold/20 flex items-center justify-center">
-                      <span className="font-serif text-gold text-4xl font-bold">KS</span>
-                    </div>
-                    <h3 className="font-serif text-2xl text-primary-foreground font-semibold mb-2">
-                      CA Krishan Kumar Sharma
-                    </h3>
-                    <p className="text-primary-foreground/70 text-sm">Founder & Managing Partner</p>
-                    <div className="mt-4 flex justify-center gap-2">
-                      <span className="px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">B.Com</span>
-                      <span className="px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">FCA</span>
-                      <span className="px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">DISA</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent/20 rounded-full blur-2xl" />
-              <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary/20 rounded-full blur-xl" />
-            </div>
+    <section className="py-28 lg:py-36 bg-background border-b border-border/50">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="grid lg:grid-cols-12 gap-16 lg:gap-24 items-start">
 
-            {/* Experience Badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-              className="absolute -bottom-8 -right-4 lg:right-8 bg-card shadow-xl rounded-xl p-4 border border-border"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-                  <span className="font-serif text-accent text-xl font-bold">18+</span>
-                </div>
-                <div>
-                  <p className="text-foreground font-semibold">Years of</p>
-                  <p className="text-muted-foreground text-sm">Excellence</p>
-                </div>
-              </div>
+          {/* ── LEFT: editorial heading ── */}
+          <motion.div
+            variants={containerV}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="lg:col-span-5"
+          >
+            <motion.span variants={itemV} className="text-eyebrow text-accent text-[11px]">
+              About KAMS & Co
+            </motion.span>
+
+            <motion.h2 variants={itemV} className="text-headline font-serif text-foreground mt-4 mb-6">
+              Who We Are
+            </motion.h2>
+
+            <motion.div variants={itemV} className="w-16 h-[3px] bg-gradient-gold mb-8 rounded-full" />
+
+            <motion.p variants={itemV} className="text-muted-foreground text-lg font-light leading-relaxed mb-10 max-w-md">
+              KAMS & Co is a firm built on a singular belief: that every business deserves expert financial guidance that is strategic, transparent, and deeply personal.
+            </motion.p>
+
+            <motion.div variants={itemV}>
+              <Button asChild size="lg"
+                className="bg-primary hover:bg-navy-light text-primary-foreground text-xs uppercase tracking-widest font-bold px-8 py-7 rounded-sm active:scale-[0.98] shadow-md">
+                <Link to="/team">
+                  Meet Our Partners <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </Button>
             </motion.div>
           </motion.div>
 
-          {/* Content Side */}
+          {/* ── RIGHT: 4-point grid + mission box ── */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 32 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 space-y-5"
           >
-            <span className="text-accent font-medium text-sm uppercase tracking-wider">
-              About Us
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-              Your Trusted Financial Partners
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Founded by CA Krishan Kumar Sharma, our firm has been providing exceptional 
-              financial services since 2017. We combine deep expertise with a client-centric 
-              approach to deliver solutions that drive success and ensure compliance.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Our team of qualified professionals specializes in taxation, audit, RERA compliance, 
-              and financial advisory services. We take pride in building lasting relationships 
-              with our clients based on trust, transparency, and excellence.
-            </p>
-
-            {/* Features List */}
-            <ul className="grid sm:grid-cols-2 gap-3 mb-8">
-              {features.map((feature, index) => (
-                <motion.li
-                  key={feature}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+            {/* 4 About Points in 2-col grid */}
+            <div className="grid sm:grid-cols-2 gap-5">
+              {aboutPoints.map((point, i) => (
+                <motion.div
+                  key={point.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.4 }}
-                  className="flex items-start gap-2"
+                  transition={{ delay: i * 0.08, duration: 0.6 }}
+                  className="group bg-card border border-border/60 rounded-lg p-7 hover:border-accent/40 hover:shadow-card-hover transition-all duration-350 spotlight-border"
                 >
-                  <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-foreground text-sm">{feature}</span>
-                </motion.li>
+                  <div className="w-10 h-10 rounded bg-accent/8 border border-accent/20 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:border-accent transition-all duration-300 flex-shrink-0">
+                    <point.icon className="w-4.5 h-4.5 text-accent group-hover:text-accent-foreground transition-colors" />
+                  </div>
+                  <h4 className="font-sans font-semibold text-foreground text-base mb-2 leading-snug">{point.title}</h4>
+                  <p className="text-muted-foreground text-sm font-light leading-relaxed">{point.description}</p>
+                </motion.div>
               ))}
-            </ul>
+            </div>
 
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-gold-dark shadow-gold">
-              <Link to="/team">
-                Meet Our Team
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-            </Button>
+            {/* Mission statement block */}
+            <div className="bg-primary rounded-lg p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-accent/8 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-4">
+                  {[
+                    "Navigate complex tax challenges",
+                    "Full regulatory compliance",
+                    "Drive measurable growth",
+                  ].map((pt) => (
+                    <div key={pt} className="flex items-center gap-2">
+                      <CheckCircle className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+                      <span className="text-primary-foreground/70 text-xs font-sans leading-none hidden sm:inline">{pt}</span>
+                    </div>
+                  ))}
+                </div>
+                <blockquote className="border-l-2 border-accent pl-5">
+                  <p className="text-primary-foreground/80 text-base italic font-serif font-light leading-relaxed">
+                    "A commitment to delivering results, ensuring regulatory compliance, and driving business success — for every client, every engagement."
+                  </p>
+                  <footer className="mt-3">
+                    <span className="text-eyebrow text-accent text-[10px]">— KAMS & Co, Core Philosophy</span>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

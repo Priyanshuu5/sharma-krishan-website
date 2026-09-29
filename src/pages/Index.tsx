@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { HeroSection } from "@/components/home/HeroSection";
 import { ServicesPreview } from "@/components/home/ServicesPreview";
 import { AboutSection } from "@/components/home/AboutSection";
+import { WhyChooseUsSection } from "@/components/home/WhyChooseUsSection";
+import { ClientsSection } from "@/components/home/ClientsSection";
 import { CTASection } from "@/components/home/CTASection";
 import { SEO } from "@/components/SEO";
 
@@ -12,8 +14,8 @@ const homeSchema = {
       "@type": "WebSite",
       "@id": "https://kamsco.in/#website",
       "url": "https://kamsco.in/",
-      "name": "Kamsco",
-      "description": "Expert Chartered Accountants in Noida, Delhi NCR providing taxation, audit, GST registration, RERA compliance, and financial advisory services.",
+      "name": "KAMS & Co Chartered Accountants",
+      "description": "Expert Chartered Accountants providing taxation, audit, GST compliance, corporate advisory, and financial advisory services worldwide.",
       "publisher": {
         "@id": "https://kamsco.in/#organization"
       }
@@ -21,43 +23,27 @@ const homeSchema = {
     {
       "@type": "AccountingService",
       "@id": "https://kamsco.in/#organization",
-      "name": "Kamsco",
+      "name": "KAMS & Co Chartered Accountants",
       "url": "https://kamsco.in/",
-      "telephone": "+91-9876543210",
-      "email": "info@kamsco.in",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123, Business Plaza, Sector 18",
-        "addressLocality": "Noida",
-        "addressRegion": "Uttar Pradesh",
-        "postalCode": "201301",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.6139",
-        "longitude": "77.3179"
-      },
-      "openingHoursSpecification": [
+      "telephone": "+91-97823-13223",
+      "founders": [
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "09:00",
-          "closes": "18:00"
+          "@type": "Person",
+          "name": "CA Mohan Lal Sharma",
+          "jobTitle": "Partner, FCA"
         },
         {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Saturday"],
-          "opens": "10:00",
-          "closes": "14:00"
+          "@type": "Person",
+          "name": "CA Akanksha Tripathi",
+          "jobTitle": "Partner, ACA"
+        },
+        {
+          "@type": "Person",
+          "name": "CA Komal Sharma",
+          "jobTitle": "Partner, ACA"
         }
       ],
-      "founder": {
-        "@type": "Person",
-        "name": "CA Krishan Kumar Sharma"
-      },
       "priceRange": "$$",
-      "image": "https://kamsco.in/og-image.jpg"
     }
   ]
 };
@@ -66,13 +52,15 @@ const Index = () => {
   return (
     <Layout>
       <SEO
-        title="Kamsco | Chartered Accountants in Noida, Delhi NCR"
-        description="Professional Chartered Accountants in Sector 18, Noida. Expert services for Income Tax Filing, GST, Audit, RERA compliance, and Financial Advisory."
+        title="KAMS & Co | Chartered Accountants — Taxation, Audit & Financial Advisory"
+        description="KAMS & Co Chartered Accountants — Expert services in taxation, audit, GST compliance, corporate advisory, and international financial planning worldwide."
         schemaMarkup={homeSchema}
       />
       <HeroSection />
-      <ServicesPreview />
       <AboutSection />
+      <ServicesPreview />
+      <WhyChooseUsSection />
+      <ClientsSection />
       <CTASection />
     </Layout>
   );

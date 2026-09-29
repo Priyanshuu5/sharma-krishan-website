@@ -155,76 +155,81 @@ const HelpCenter = () => {
         schemaMarkup={helpCenterSchema}
       />
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-hero relative">
+      <section className="pt-40 pb-20 bg-gradient-hero relative overflow-hidden">
+        {/* Background Subtle Grid Texture */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M60 0H0v60h60V0zM1 59V1h58v58H1z' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+          }} />
+        </div>
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold" />
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="text-gold font-medium text-sm uppercase tracking-wider">
-              Help & Support
+            <span className="text-accent font-semibold text-xs uppercase tracking-[0.2em]">
+              Secure Support
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-6">
-              Document Upload Center
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-primary-foreground mt-4 mb-6 leading-tight">
+              Document Transmission
             </h1>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              Securely upload your documents for our team to review. We'll get back to you 
-              with expert guidance and solutions.
+            <p className="text-primary-foreground/75 text-base md:text-lg leading-relaxed font-sans font-light">
+              Securely transmit your corporate financial statements, invoices, and audit ledgers directly to our compliance desk.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4 max-w-7xl">
           <div className="max-w-2xl mx-auto">
             {/* Info Alert */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-accent/10 border border-accent/30 rounded-lg p-4 mb-8 flex gap-3"
+              className="bg-accent/5 border border-accent/20 rounded p-4 mb-10 flex gap-3"
             >
               <Info className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-foreground font-medium mb-1">Secure Document Submission</p>
-                <p className="text-muted-foreground text-sm">
-                  All documents are securely encrypted and handled with strict confidentiality.
-                  Accepted formats: PDF, DOC, DOCX, JPG, PNG (Max 10MB each)
+                <p className="text-foreground font-serif font-semibold text-sm mb-1">Encrypted Advisory Transmission</p>
+                <p className="text-muted-foreground text-xs font-light font-sans leading-relaxed">
+                  All files are stored inside encrypted repositories and processed with strict client-attorney privilege. <br />
+                  Permitted formats: PDF, DOC, DOCX, JPG, PNG (Max size: 10MB per file)
                 </p>
               </div>
             </motion.div>
 
             <motion.form
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
               onSubmit={handleSubmit}
-              className="bg-card border border-border rounded-xl p-6 md:p-8 space-y-6"
+              className="bg-card border border-border/60 rounded p-8 space-y-6 shadow-sm"
             >
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name *</Label>
-                  <Input id="name" required placeholder="Enter your name" />
+                  <Label htmlFor="name" className="text-xs uppercase tracking-wider text-foreground/80 font-semibold font-sans">Full Name *</Label>
+                  <Input id="name" required placeholder="Enter your name" className="rounded-sm border-border/70 focus:border-accent text-sm" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email">Email Address *</Label>
-                  <Input id="email" type="email" required placeholder="your@email.com" />
+                  <Label htmlFor="email" className="text-xs uppercase tracking-wider text-foreground/80 font-semibold font-sans">Email Address *</Label>
+                  <Input id="email" type="email" required placeholder="your@email.com" className="rounded-sm border-border/70 focus:border-accent text-sm" />
                 </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number *</Label>
-                  <Input id="phone" type="tel" required placeholder="+91 98765 43210" />
+                  <Label htmlFor="phone" className="text-xs uppercase tracking-wider text-foreground/80 font-semibold font-sans">Phone Number *</Label>
+                  <Input id="phone" type="tel" required placeholder="+91 98765 43210" className="rounded-sm border-border/70 focus:border-accent text-sm" />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="service">Service Type *</Label>
+                  <Label htmlFor="service" className="text-xs uppercase tracking-wider text-foreground/80 font-semibold font-sans">Service Type *</Label>
                   <Select required>
-                    <SelectTrigger>
+                    <SelectTrigger className="rounded-sm border-border/70 focus:border-accent text-sm">
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
                     <SelectContent>
@@ -239,19 +244,20 @@ const HelpCenter = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="description">Description *</Label>
+                <Label htmlFor="description" className="text-xs uppercase tracking-wider text-foreground/80 font-semibold font-sans">Description *</Label>
                 <Textarea
                   id="description"
                   required
-                  placeholder="Please describe your requirements and the documents you are uploading..."
+                  placeholder="Detail the contents of your documentation and specific audit parameters..."
                   rows={4}
+                  className="rounded-sm border-border/70 focus:border-accent text-sm"
                 />
               </div>
 
               {/* File Upload */}
               <div className="space-y-3">
-                <Label>Upload Documents</Label>
-                <div className="border-2 border-dashed border-border rounded-lg p-8 text-center hover:border-accent/50 transition-colors">
+                <Label className="text-xs uppercase tracking-wider text-foreground/80 font-semibold font-sans">Upload Documents</Label>
+                <div className="border border-dashed border-border/80 bg-secondary/30 rounded p-8 text-center hover:border-accent/50 hover:bg-accent/[0.02] transition-colors duration-300">
                   <input
                     type="file"
                     id="file-upload"
@@ -260,13 +266,13 @@ const HelpCenter = () => {
                     accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
                     onChange={handleFileChange}
                   />
-                  <label htmlFor="file-upload" className="cursor-pointer">
-                    <Upload className="w-10 h-10 mx-auto text-muted-foreground mb-3" />
-                    <p className="text-foreground font-medium mb-1">
+                  <label htmlFor="file-upload" className="cursor-pointer block">
+                    <Upload className="w-8 h-8 mx-auto text-accent mb-3" />
+                    <p className="text-foreground text-sm font-serif font-medium mb-1">
                       Click to upload or drag and drop
                     </p>
-                    <p className="text-muted-foreground text-sm">
-                      PDF, DOC, DOCX, JPG, PNG (Max 10MB each)
+                    <p className="text-muted-foreground text-xs font-sans font-light">
+                      PDF, DOC, DOCX, JPG, PNG (Max 10MB per file)
                     </p>
                   </label>
                 </div>
@@ -277,13 +283,13 @@ const HelpCenter = () => {
                     {files.map((file, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between bg-muted rounded-lg p-3"
+                        className="flex items-center justify-between bg-secondary/80 rounded-sm p-3 border border-border/40"
                       >
                         <div className="flex items-center gap-3">
-                          <FileText className="w-5 h-5 text-accent" />
+                          <FileText className="w-4 h-4 text-accent" />
                           <div>
-                            <p className="text-foreground text-sm font-medium">{file.name}</p>
-                            <p className="text-muted-foreground text-xs">
+                            <p className="text-foreground text-xs font-semibold">{file.name}</p>
+                            <p className="text-muted-foreground text-[10px] font-sans font-light">
                               {(file.size / 1024 / 1024).toFixed(2)} MB
                             </p>
                           </div>
@@ -291,10 +297,10 @@ const HelpCenter = () => {
                         <button
                           type="button"
                           onClick={() => removeFile(index)}
-                          className="text-muted-foreground hover:text-destructive transition-colors"
+                          className="text-muted-foreground hover:text-destructive transition-colors p-1"
                           aria-label="Remove file"
                         >
-                          <AlertCircle className="w-5 h-5" />
+                          <AlertCircle className="w-4 h-4" />
                         </button>
                       </div>
                     ))}
@@ -304,14 +310,14 @@ const HelpCenter = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-accent text-accent-foreground hover:bg-gold-dark shadow-gold"
+                className="w-full bg-primary hover:bg-navy-light text-primary-foreground text-xs uppercase tracking-wider font-semibold py-6 rounded-sm active:scale-[0.98] transition-all"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Submitting..." : "Submit Documents"}
+                {isSubmitting ? "Transmitting..." : "Submit Documents"}
               </Button>
 
-              <p className="text-muted-foreground text-xs text-center">
-                By submitting, you agree to our privacy policy and terms of service.
+              <p className="text-muted-foreground text-[10px] text-center font-sans font-light">
+                By submitting, you consent to our secure client data policy and terms of service.
               </p>
             </motion.form>
           </div>

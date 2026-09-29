@@ -1,136 +1,92 @@
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { 
-  Calculator, 
-  FileText, 
-  ClipboardCheck, 
-  Building2, 
-  Briefcase, 
+import {
+  ClipboardCheck,
   TrendingUp,
-  ArrowRight,
-  Globe,
-  Users,
-  Landmark,
-  Sprout,
-  User,
-  Handshake,
-  Utensils,
-  Plane,
-  Heart,
+  Calculator,
   ShieldCheck,
-  Copyright,
-  PenTool,
-  Lightbulb,
-  FileCheck,
-  BookOpen,
+  Globe,
+  BarChart3,
+  FileText,
+  Briefcase,
+  ArrowRight,
+  Layers,
   Scale,
-  LineChart,
-  Coins,
-  PieChart
+  Building2,
+  PieChart,
 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
+import { cn } from "@/lib/utils";
 
 const servicesSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://kamsco.in/services/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://kamsco.in/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Services",
-          "item": "https://kamsco.in/services"
-        }
-      ]
-    },
-    {
       "@type": "WebPage",
       "@id": "https://kamsco.in/services/#webpage",
       "url": "https://kamsco.in/services",
-      "name": "Professional CA Services | GST, Audit, Tax Consulting - Kamsco",
-      "description": "Explore our professional services including company registration, auditing, GST compliance, trademark filing, Nidhi/producer company incorporation, and financial planning.",
-      "breadcrumb": {
-        "@id": "https://kamsco.in/services/#breadcrumb"
-      }
+      "name": "Services | KAMS & Co Chartered Accountants",
+      "description": "Comprehensive CA services: Audit & Assurance, Corporate Advisory, Taxation, and Compliance & Regulatory services for businesses worldwide.",
     }
   ]
 };
 
 const serviceCategories = [
   {
-    title: "Business Registrations",
-    description: "Start your journey with the right legal structure.",
+    id: "audit-assurance",
+    title: "Audit & Assurance",
+    description: "Comprehensive audit services that give your stakeholders confidence in your financial reporting.",
     items: [
-      { icon: Globe, title: "Foreign Company Registration", description: "For setting up a foreign company to establish business as a subsidiary in India." },
-      { icon: Building2, title: "Private Limited Company", description: "The most popular form of corporate legal entity in India for Startups." },
-      { icon: Users, title: "Public Limited Company", description: "Suitable for businesses that want to raise equity capital from the public." },
-      { icon: Handshake, title: "LLP Registration", description: "An ideal approach for small business in the unorganized sector having multiple promoters." },
-      { icon: Landmark, title: "Nidhi Company", description: "Develop the habit of economizing by collecting deposits and lending to members." },
-      { icon: Sprout, title: "Producer Company", description: "Ideal for starting the company for farmers for agri purpose with 10 members." },
-      { icon: User, title: "One Person Company", description: "Business Entity ideal for single entrepreneurs aiming to start business with limited liability." },
-      { icon: Users, title: "Partnership Registration", description: "Ideal for like-minded people for forming an entity with less procedural compliances." },
-      { icon: FileText, title: "GST Registration", description: "GST Registration is applicable on goods (Turnover: 40 lakhs) and services (Turnover: 20 lakh)." },
-      { icon: Utensils, title: "FSSAI Food License", description: "Food License for food entrepreneurs as a basic, state or Central License." },
-      { icon: Plane, title: "Import Export Code (IEC)", description: "Entrepreneurs/Entities planning to work overseas need to have Import Export Code." },
-      { icon: Building2, title: "RERA Registrations", description: "Commercial or residential land of over 500sq m or having more than 8 apartments." },
-    ]
+      { icon: ClipboardCheck, title: "Statutory Audits", description: "Complete statutory audit services ensuring full compliance with applicable laws and standards." },
+      { icon: Layers, title: "Internal Audits", description: "In-depth review of internal processes, controls, and risk management systems." },
+      { icon: ShieldCheck, title: "Compliance Audits", description: "Thorough assessment of compliance with regulatory requirements and industry standards." },
+      { icon: Scale, title: "Risk Assessment", description: "Identification and evaluation of key business risks to strengthen your financial controls." },
+      { icon: BarChart3, title: "Internal Controls", description: "Design and evaluation of robust internal control frameworks to protect your assets." },
+      { icon: FileText, title: "Fraud Prevention", description: "Proactive fraud risk assessment and prevention strategies to safeguard your organization." },
+    ],
   },
   {
-    title: "NGO & Trust Services",
-    description: "Legal support for non-profit and charitable organizations.",
+    id: "corporate-advisory",
+    title: "Corporate Advisory & Strategic Planning",
+    description: "Strategic guidance that helps businesses structure, grow, and expand with confidence.",
     items: [
-      { icon: Heart, title: "Trust Registration", description: "A Trust is an arrangement where owner transfers the property to a trustee." },
-      { icon: Users, title: "Society Registration", description: "Group of people working together to promote charitable activities like sports, music, culture, etc." },
-      { icon: Briefcase, title: "Section-8 Company", description: "Company formed with an object to promote commerce, art, science, charity, etc." },
-      { icon: Globe, title: "FCRA Registration", description: "Foreign contributions or income from nations outside of India are governed by FCRA." },
-    ]
+      { icon: Building2, title: "Business Structure Advisory", description: "Expert guidance on optimal legal and organizational structures for your business goals." },
+      { icon: Briefcase, title: "Mergers & Acquisitions", description: "End-to-end M&A advisory including due diligence, valuation, and deal structuring." },
+      { icon: Globe, title: "Cross-Border Advisory", description: "Navigating international business structures, regulatory requirements, and tax obligations." },
+      { icon: TrendingUp, title: "Fundraising Advisory", description: "Strategic support for raising capital through equity, debt, or hybrid instruments." },
+      { icon: BarChart3, title: "IPO Readiness", description: "Preparing businesses for public listings with compliance frameworks and disclosure standards." },
+      { icon: PieChart, title: "Global Listing Support", description: "Advisory for listing on global stock exchanges including regulatory and disclosure requirements." },
+    ],
   },
   {
-    title: "Intellectual Property Rights",
-    description: "Protect your brand, inventions, and creative works.",
+    id: "taxation-services",
+    title: "Taxation Services",
+    description: "Comprehensive tax planning and compliance services for businesses and individuals operating domestically and internationally.",
     items: [
-      { icon: ShieldCheck, title: "Trademark Registration", description: "Register your brand name/logo and create your goodwill in the market." },
-      { icon: Copyright, title: "Copyright Registration", description: "Copyright is the legal right to ownership and enjoyment entitled to creators." },
-      { icon: PenTool, title: "Design Registration", description: "Protect any newly created shape, configuration, patterns and composition of lines or colours." },
-      { icon: Lightbulb, title: "Patent Registration", description: "Secured invention or the special right given to an inventor to manufacture, sell or use invention." },
-    ]
+      { icon: Calculator, title: "Income Tax Advisory", description: "Strategic income tax planning to minimize liabilities within legal frameworks." },
+      { icon: FileText, title: "Corporate Tax Compliance", description: "End-to-end corporate tax return filing, advance tax management, and assessment support." },
+      { icon: TrendingUp, title: "Tax Planning", description: "Proactive tax strategies aligned with your business objectives and risk tolerance." },
+      { icon: Globe, title: "International Tax", description: "Cross-border tax structuring, transfer pricing, and DTAA advisory for global businesses." },
+      { icon: ShieldCheck, title: "GST Advisory", description: "GST registration, compliance, advisory, and cross-border transaction structuring." },
+      { icon: ClipboardCheck, title: "GST Cross-Border Compliance", description: "Expert handling of GST implications for import/export and international transactions." },
+    ],
   },
   {
-    title: "Audit & Tax Management",
-    description: "Comprehensive compliance and assurance services.",
+    id: "compliance-regulatory",
+    title: "Compliance & Regulatory Services",
+    description: "Ensuring your business stays fully compliant with evolving regulations across jurisdictions.",
     items: [
-      { icon: FileCheck, title: "ITR Filing", description: "Filing information about Income and tax payable to the Income Tax Department." },
-      { icon: BookOpen, title: "ROC Filing", description: "Annual General Meeting conduct and annual return filing for companies." },
-      { icon: FileText, title: "GST Return", description: "Mandatory filing of GST returns for all businesses registered under GST." },
-      { icon: Calculator, title: "TDS Return", description: "Quarterly statement to be submitted to the IT department by the Deductor." },
-      { icon: ClipboardCheck, title: "GST Audit", description: "Examination of the returns, records and other important documents maintained by taxable individuals." },
-      { icon: Landmark, title: "Bank Audit", description: "Monitoring and reviewing huge amounts of public deposits and savings." },
-      { icon: Heart, title: "NGO Audit", description: "Audit for non-profits raising funds from members, donors or contributors." },
-      { icon: Scale, title: "Tax Audit", description: "Various types of audits under different laws such as company audit, statutory audit, etc." },
-    ]
+      { icon: FileText, title: "Regulatory Reporting", description: "Accurate and timely preparation of all statutory and regulatory reports required by law." },
+      { icon: Building2, title: "Corporate Filings", description: "ROC filings, annual returns, board resolutions, and all corporate secretarial requirements." },
+      { icon: Scale, title: "Ind AS Compliance", description: "Adoption and compliance with Indian Accounting Standards for accurate financial reporting." },
+      { icon: BarChart3, title: "GAAP Compliance", description: "Preparation and review of financial statements under US GAAP and other international frameworks." },
+      { icon: Globe, title: "Offshore Banking Regulations", description: "Advisory on offshore banking compliance, FEMA, and RBI regulations for international operations." },
+      { icon: ShieldCheck, title: "Compliance Management", description: "Comprehensive compliance calendar management and proactive regulatory monitoring." },
+    ],
   },
-  {
-    title: "Financial Advisory",
-    description: "Strategic planning to drive business growth and stability.",
-    items: [
-      { icon: TrendingUp, title: "Business Valuation", description: "Determining the economic value of a business or company unit." },
-      { icon: LineChart, title: "Financial Planning", description: "Comprehensive strategies for long-term financial health and growth." },
-      { icon: Coins, title: "Investment Advisory", description: "Expert guidance on investment opportunities and portfolio management." },
-      { icon: PieChart, title: "Project Finance", description: "Funding of long-term infrastructure and industrial projects." },
-      { icon: Briefcase, title: "Due Diligence", description: "Detailed audit of a potential investment or product to confirm facts." },
-    ]
-  }
 ];
 
 const Services = () => {
@@ -138,15 +94,11 @@ const Services = () => {
 
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.replace('#', '');
+      const id = location.hash.replace("#", "");
       const el = document.getElementById(id);
       if (el) {
-        // slight delay to ensure layout/anchors are present
         setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // for accessibility, move focus
-          // @ts-ignore
-          if (typeof el.focus === 'function') el.focus();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
         }, 60);
       }
     }
@@ -155,28 +107,36 @@ const Services = () => {
   return (
     <Layout>
       <SEO
-        title="Our Services | GST, Audit, Tax Consulting - Kamsco"
-        description="Comprehensive Chartered Accountancy & legal services in Noida. We handle Company Registration, GST Returns, Tax Audits, IP Rights, and Financial Advisory."
+        title="Services | KAMS & Co Chartered Accountants"
+        description="Comprehensive CA services from KAMS & Co: Audit & Assurance, Corporate Advisory, Taxation Services, and Compliance & Regulatory management for businesses worldwide."
         schemaMarkup={servicesSchema}
       />
+
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-hero relative">
+      <section className="pt-40 pb-20 bg-primary relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(circle, hsl(40 20% 98%) 1px, transparent 1px)`,
+            backgroundSize: "28px 28px",
+          }}
+        />
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold" />
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="text-gold font-medium text-sm uppercase tracking-wider">
-              Our Expertise
+            <span className="text-accent font-semibold text-xs uppercase tracking-[0.2em]">
+              Services We Offer
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-6">
-              Comprehensive Professional Services
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light text-primary-foreground mt-4 mb-6 leading-tight">
+              Financial & Advisory Services
             </h1>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              From company incorporation and intellectual property to complex audits and financial advisory, we offer end-to-end solutions.
+            <p className="text-primary-foreground/75 text-base md:text-lg leading-relaxed font-sans font-light">
+              From statutory audits and international taxation to corporate M&A advisory and offshore compliance — we cover every financial dimension of your business.
             </p>
           </motion.div>
         </div>
@@ -184,76 +144,89 @@ const Services = () => {
 
       {/* Services Categories */}
       <div className="bg-background">
-        {serviceCategories.map((category, catIndex) => {
-          // create a URL-safe slug (remove special chars, collapse dashes)
-          const slug = category.title
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/-+/g, '-')
-            .replace(/(^-|-$)/g, '');
-          return (
-          <section id={slug} key={category.title} tabIndex={-1} style={{ scrollMarginTop: '6rem' }} className={`py-16 ${catIndex % 2 === 0 ? 'bg-background' : 'bg-muted/30'}`}>
-            <div className="container mx-auto px-4">
+        {serviceCategories.map((category, catIndex) => (
+          <section
+            id={category.id}
+            key={category.title}
+            tabIndex={-1}
+            style={{ scrollMarginTop: "6rem" }}
+            className={cn(
+              "py-24 border-b border-border/40",
+              catIndex % 2 === 0 ? "bg-white" : "bg-secondary"
+            )}
+          >
+            <div className="container mx-auto px-4 max-w-7xl">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="mb-12"
+                transition={{ duration: 0.5 }}
+                className="mb-16 max-w-3xl"
               >
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
+                <span className="text-accent font-semibold text-[10px] uppercase tracking-[0.25em]">
+                  {String(catIndex + 1).padStart(2, "0")} — Service Area
+                </span>
+                <h2 className="font-serif text-3xl md:text-4xl font-normal text-foreground mt-2 mb-4">
                   {category.title}
                 </h2>
-                <p className="text-muted-foreground text-lg max-w-2xl">
+                <div className="w-12 h-0.5 bg-accent mb-4" />
+                <p className="text-muted-foreground text-sm font-light leading-relaxed">
                   {category.description}
                 </p>
               </motion.div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Directory-style list layout */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-8">
                 {category.items.map((service, index) => (
                   <motion.div
                     key={service.title}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="group bg-card border border-border rounded-xl p-6 hover:shadow-lg hover:border-accent/30 transition-all duration-300"
+                    transition={{ delay: index * 0.05, duration: 0.5 }}
+                    className="group border-l-2 border-accent/20 pl-5 py-1.5 hover:border-accent transition-all duration-300"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                        <service.icon className="w-6 h-6 text-accent group-hover:text-accent-foreground transition-colors" />
-                      </div>
-                      <div>
-                        <h3 className="font-serif text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
-                          {service.title}
-                        </h3>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {service.description}
-                        </p>
-                      </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <service.icon className="w-4 h-4 text-accent/80 flex-shrink-0" />
+                      <h3 className="font-serif text-lg font-medium text-foreground transition-colors group-hover:text-accent">
+                        {service.title}
+                      </h3>
                     </div>
+                    <p className="text-muted-foreground text-xs leading-relaxed font-sans font-light">
+                      {service.description}
+                    </p>
                   </motion.div>
                 ))}
               </div>
             </div>
           </section>
-          )
-        })}
+        ))}
       </div>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg')] opacity-5 mix-blend-overlay" />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-            Ready to Get Started?
+      {/* CTA */}
+      <section className="py-24 bg-primary relative overflow-hidden text-center">
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(circle, hsl(40 20% 98%) 1px, transparent 1px)`,
+            backgroundSize: "28px 28px",
+          }}
+        />
+        <div className="container mx-auto px-4 max-w-7xl relative z-10">
+          <h2 className="font-serif text-3xl md:text-4xl font-light text-primary-foreground mb-6 leading-tight">
+            Need Customized Advisory?
           </h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto text-lg">
-            Connect with our experts to discuss your specific requirements and find the perfect solution for your business.
+          <p className="text-primary-foreground/75 mb-10 max-w-xl mx-auto text-sm md:text-base font-light font-sans">
+            Connect directly with our partners to evaluate your specific requirements and get a tailored solution.
           </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-gold-dark text-accent-foreground shadow-lg shadow-gold/20">
+          <Button
+            asChild
+            size="lg"
+            className="bg-accent hover:bg-gold-dark text-accent-foreground hover:text-white text-xs uppercase tracking-wider font-semibold px-8 py-6 rounded-sm shadow-gold active:scale-[0.98]"
+          >
             <Link to="/contact">
-              Get Consultation
-              <ArrowRight className="w-5 h-5 ml-2" />
+              Get Professional Consultation
+              <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </Button>
         </div>

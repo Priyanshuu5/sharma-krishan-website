@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, ArrowRight } from "lucide-react";
+import { CheckCircle, Phone, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SEO } from "@/components/SEO";
@@ -9,106 +9,91 @@ const teamSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "BreadcrumbList",
-      "@id": "https://kamsco.in/team/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://kamsco.in/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Team",
-          "item": "https://kamsco.in/team"
-        }
-      ]
-    },
-    {
       "@type": "AboutPage",
       "@id": "https://kamsco.in/team/#webpage",
       "url": "https://kamsco.in/team",
-      "name": "Our Expert CA Team - Kamsco",
-      "description": "Meet our team of qualified partners, financial consultants, and tax experts led by CA Krishan Kumar Sharma.",
-      "breadcrumb": {
-        "@id": "https://kamsco.in/team/#breadcrumb"
-      },
-      "mainEntity": {
-        "@type": "ItemList",
-        "numberOfItems": 5,
-        "itemListElement": [
-          {
-            "@type": "Person",
-            "name": "CA Krishan Kumar Sharma",
-            "jobTitle": "Founder & Managing Partner",
-            "worksFor": {
-              "@type": "AccountingService",
-              "name": "Kamsco"
-            }
-          },
-          {
-            "@type": "Person",
-            "name": "CA Rajesh Gupta",
-            "jobTitle": "Senior Partner"
-          },
-          {
-            "@type": "Person",
-            "name": "CA Meera Joshi",
-            "jobTitle": "Senior Partner"
-          }
-        ]
-      }
+      "name": "Our Expert CA Team - KAMS & Co",
+      "description": "Meet the four Chartered Accountant partners at KAMS & Co.",
     }
   ]
 };
 
-const team = [
+const partners = [
   {
-    name: "CA Krishan Kumar Sharma",
-    role: "Founder & Managing Partner",
-    expertise: "Taxation & Financial Consulting",
+    name: "Mohan Lal Sharma",
+    fullName: "CA Mohan Lal Sharma",
+    title: "Partner",
+    credentials: "F.C.A. (India), M.COM., B. COM.",
+    experience: "Post Qualification Experience of 5+ Years",
+    initials: "MS",
+    phone: "+91-97823-13223",
+    phoneHref: "tel:+919782313223",
+    specializations: [
+      "GST Consultancy & Compliances",
+      "Accounting Consultancy",
+      "Income Tax Planning & Compliances",
+      "Representation Before Various Tax Authorities",
+    ],
+    usp: "Deep understanding of the Accounting & Controls landscape and experience in helping organizations to operate smoothly.",
+    qualifications: ["FCA", "M.Com.", "B.Com."],
+    accentDark: true,
+  },
+  {
+    name: "Akanksha Tripathi",
+    fullName: "CA Akanksha Tripathi",
+    title: "Partner",
+    credentials: "A.C.A. (India), B.COM.",
+    experience: "Post Qualification Experience of 4 Years",
+    initials: "AT",
+    phone: "+91-98872-22002",
+    phoneHref: "tel:+919887222002",
+    specializations: [
+      "Auditing",
+      "Financial statement preparation",
+      "Cost Controlling and Reduction",
+      "Internal control",
+      "Accounting services",
+    ],
+    usp: "Strong attention to detail and experience with financial audits across industries.",
+    qualifications: ["ACA", "B.Com."],
+    accentDark: false,
+  },
+  {
+    name: "Komal Sharma",
+    fullName: "CA Komal Sharma",
+    title: "Partner",
+    credentials: "A.C.A. (India), B.COM.",
+    experience: "Post Qualification Experience of 3 Years",
     initials: "KS",
-    bio: "With over 18 years of experience, CA Krishan Kumar Sharma leads the firm with expertise in taxation, financial planning, and regulatory compliance. A Fellow member of ICAI with specialization in Information Systems Audit.",
-    qualifications: ["B.Com", "FCA", "DISA"],
-    isFounder: true,
+    phone: null,
+    phoneHref: null,
+    specializations: [
+      "Managing complex offshore accounts",
+      "International Taxation",
+      "Cross-border accounting",
+    ],
+    usp: "Expertise in managing offshore organization structures and multi-jurisdictional tax planning.",
+    qualifications: ["ACA", "B.Com."],
+    accentDark: true,
   },
   {
-    name: "Priyanshu Sharma",
-    role: "Website & AI Automator",
-    expertise: "Web Development & Automation",
-    initials: "PS",
-    bio: "Responsible for the firm's digital presence and implementing AI-powered automation solutions to enhance client services and operational efficiency.",
-    qualifications: ["Tech Expert"],
-    isFounder: false,
-  },
-  {
-    name: "CA Rajesh Gupta",
-    role: "Senior Partner",
-    expertise: "GST & Corporate Taxation",
-    initials: "RG",
-    bio: "Specializes in GST compliance, corporate taxation, and business advisory with a focus on helping businesses optimize their tax structure.",
-    qualifications: ["B.Com", "CA"],
-    isFounder: false,
-  },
-  {
-    name: "CA Meera Joshi",
-    role: "Senior Partner",
-    expertise: "Audit & Assurance",
-    initials: "MJ",
-    bio: "Expert in statutory audits, internal audits, and assurance services with extensive experience in various industries including manufacturing and services.",
-    qualifications: ["M.Com", "CA"],
-    isFounder: false,
-  },
-  {
-    name: "Amit Kumar",
-    role: "Assistant - Accounts & Operations",
-    expertise: "Documentation & Support",
-    initials: "AK",
-    bio: "Assists with accounts management, documentation, and day-to-day operations ensuring smooth client service delivery.",
-    qualifications: ["B.Com"],
-    isFounder: false,
+    name: "Krishan Kumar Sharma",
+    fullName: "CA Krishan Kumar Sharma",
+    title: "Partner",
+    credentials: "A.C.A. (India), B.COM.",
+    experience: "Post Qualification Experience of 5+ Years",
+    initials: "KR",
+    phone: null,
+    phoneHref: null,
+    specializations: [
+      "Corporate Tax Compliance",
+      "Financial Advisory & Planning",
+      "Business Structuring & Advisory",
+      "Regulatory Compliance Management",
+    ],
+    usp: "Extensive expertise in corporate advisory and financial planning, helping businesses build robust compliance frameworks for long-term growth.",
+    qualifications: ["ACA", "B.Com."],
+    accentDark: false,
   },
 ];
 
@@ -116,158 +101,176 @@ const Team = () => {
   return (
     <Layout>
       <SEO
-        title="Our Expert Team | Chartered Accountants - Kamsco"
-        description="Meet the experienced partners and accountants at Kamsco. Led by founder CA Krishan Kumar Sharma with 18+ years of taxation & audit expertise."
+        title="Our Expert CA Team | KAMS & Co Chartered Accountants"
+        description="Meet the four expert Chartered Accountant partners at KAMS & Co — CA Mohan Lal Sharma, CA Akanksha Tripathi, CA Komal Sharma, and CA Krishan Kumar Sharma."
         schemaMarkup={teamSchema}
       />
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-hero relative">
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold" />
-        <div className="container mx-auto px-4">
+
+      {/* Hero */}
+      <section className="pt-40 pb-24 bg-gradient-hero relative overflow-hidden">
+        <div className="absolute inset-0 pattern-dots opacity-[0.06] text-white pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold opacity-70" />
+        <div className="absolute top-0 right-0 w-[500px] h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <span className="text-gold font-medium text-sm uppercase tracking-wider">
-              Meet Our Experts
-            </span>
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-6">
-              Our Professional Team
+            <span className="text-eyebrow text-accent text-[11px]">Our Partners</span>
+            <h1 className="text-display font-serif text-white mt-5 mb-6 leading-[1.04]">
+              Meet the<br />
+              <span className="italic font-light text-white/70">Team</span>
             </h1>
-            <p className="text-primary-foreground/80 text-lg leading-relaxed">
-              A dedicated team of qualified professionals committed to delivering 
-              excellence in every engagement.
+            <p className="text-white/60 text-xl font-light leading-relaxed max-w-xl">
+              Four dedicated Chartered Accountants with complementary expertise — united by a commitment to delivering world-class financial services.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Founder Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
+      {/* Partners */}
+      <div className="bg-background">
+        {partners.map((partner, index) => {
+          const isEven = index % 2 === 0;
+          return (
+            <section
+              key={partner.name}
+              className={`py-24 lg:py-32 border-b border-border/40 ${
+                isEven ? "bg-background" : "bg-secondary"
+              }`}
+            >
+              <div className="container mx-auto px-6 max-w-7xl">
+                <motion.div
+                  initial={{ opacity: 0, y: 28 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                  className={`grid lg:grid-cols-12 gap-12 lg:gap-16 items-start ${
+                    !isEven ? "lg:[direction:rtl] [direction:ltr]" : ""
+                  }`}
+                >
+                  {/* Avatar column */}
+                  <div className="lg:col-span-4 lg:[direction:ltr]">
+                    <div className="bg-primary rounded-lg p-10 text-center relative overflow-hidden shadow-xl">
+                      <div className="absolute inset-0 pattern-dots opacity-[0.04] text-white pointer-events-none" />
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-accent/8 rounded-full blur-2xl pointer-events-none" />
+
+                      <div className="relative z-10">
+                        {/* Monogram */}
+                        <div
+                          className={`w-28 h-28 mx-auto mb-6 rounded-xl flex items-center justify-center shadow-gold animate-float ${
+                            partner.accentDark ? "bg-gradient-gold" : "bg-navy-lighter border border-white/20"
+                          }`}
+                          style={{ animationDelay: `${index * 0.6}s` }}
+                        >
+                          <span className="font-serif font-bold text-4xl text-white">{partner.initials}</span>
+                        </div>
+
+                        <span className="text-eyebrow text-accent text-[10px]">{partner.title}</span>
+                        <h3 className="font-serif text-2xl text-white font-medium mt-2 mb-1">
+                          CA {partner.name}
+                        </h3>
+                        <p className="text-white/50 text-sm font-sans mb-6">{partner.credentials}</p>
+
+                        {/* Qualification badges */}
+                        <div className="flex justify-center flex-wrap gap-2 mb-6">
+                          {partner.qualifications.map((q) => (
+                            <span key={q}
+                              className="px-3 py-1.5 bg-white/8 border border-white/15 text-white/75 text-[10px] uppercase tracking-wider font-semibold rounded-sm">
+                              {q}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Experience */}
+                        <div className="border-t border-white/10 pt-5 mb-4">
+                          <p className="text-eyebrow text-white/35 text-[9px] mb-1">Experience</p>
+                          <p className="text-white/70 text-sm font-sans font-light">{partner.experience}</p>
+                        </div>
+
+                        {/* Phone */}
+                        {partner.phone && (
+                          <a href={partner.phoneHref!}
+                            className="inline-flex items-center gap-2 text-accent hover:text-gold-light transition-colors text-sm font-semibold">
+                            <Phone className="w-3.5 h-3.5" />
+                            {partner.phone}
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Detail column */}
+                  <div className="lg:col-span-8 lg:[direction:ltr]">
+                    <span className="text-eyebrow text-accent text-[11px]">Partner Profile</span>
+                    <h2 className="font-serif text-4xl md:text-5xl font-normal text-foreground mt-3 mb-2 leading-tight">
+                      {partner.name}
+                    </h2>
+                    <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-6">
+                      {partner.credentials}
+                    </p>
+                    <div className="w-14 h-[3px] bg-gradient-gold mb-10 rounded-full" />
+
+                    {/* Specializations */}
+                    <div className="mb-10">
+                      <h4 className="text-eyebrow text-muted-foreground text-[10px] mb-6">Areas of Specialization</h4>
+                      <div className="grid sm:grid-cols-2 gap-4">
+                        {partner.specializations.map((spec) => (
+                          <div key={spec}
+                            className="flex items-start gap-3 p-4 bg-card border border-border/50 rounded-lg hover:border-accent/30 hover:shadow-card transition-all duration-300 group">
+                            <CheckCircle className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                            <span className="text-foreground/80 text-sm font-sans font-light leading-snug group-hover:text-foreground transition-colors">
+                              {spec}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* USP */}
+                    <div className="bg-gradient-section border border-border/60 rounded-lg p-7 relative overflow-hidden">
+                      <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-gold rounded-l-lg" />
+                      <p className="text-eyebrow text-accent text-[10px] mb-3 pl-5">Unique Selling Point</p>
+                      <p className="text-foreground/75 text-base leading-relaxed font-serif font-light italic pl-5">
+                        "{partner.usp}"
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </section>
+          );
+        })}
+      </div>
+
+      {/* CTA */}
+      <section className="py-24 bg-primary text-center relative overflow-hidden">
+        <div className="absolute inset-0 pattern-dots opacity-[0.05] text-white pointer-events-none" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-accent/8 rounded-full blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid lg:grid-cols-2 gap-12 items-center mb-20"
           >
-            <div className="relative">
-              <div className="aspect-square max-w-md mx-auto bg-gradient-navy rounded-2xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gold/20 flex items-center justify-center border-4 border-gold/30">
-                    <span className="font-serif text-gold text-5xl font-bold">KS</span>
-                  </div>
-                  <div className="flex justify-center gap-2 mb-4">
-                    {team[0].qualifications.map((q) => (
-                      <span key={q} className="px-3 py-1 bg-gold/20 text-gold text-xs rounded-full">
-                        {q}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl" />
-            </div>
-
-            <div>
-              <span className="text-accent font-medium text-sm uppercase tracking-wider">
-                Founder
-              </span>
-              <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mt-2 mb-2">
-                {team[0].name}
-              </h2>
-              <p className="text-accent font-medium mb-4">{team[0].role}</p>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                {team[0].bio}
-              </p>
-              <p className="text-foreground font-medium mb-4">
-                Expertise: {team[0].expertise}
-              </p>
-              <div className="flex gap-3">
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="mailto:krishan@kamsco.in"
-                  className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
-                  aria-label="Email"
-                >
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+            <span className="text-eyebrow text-accent text-[11px]">Work With Our Partners</span>
+            <h2 className="font-serif text-4xl md:text-5xl font-light text-white mt-4 mb-6">
+              Let's Build Something<br />
+              <span className="italic text-white/65">Together</span>
+            </h2>
+            <p className="text-white/55 mb-10 max-w-xl mx-auto text-lg font-light font-sans leading-relaxed">
+              Schedule a consultation to discuss how KAMS & Co can support your business financial needs.
+            </p>
+            <Button asChild size="lg"
+              className="bg-accent hover:bg-gold-dark text-accent-foreground hover:text-white text-xs uppercase tracking-widest font-bold px-10 py-7 rounded-sm shadow-gold active:scale-[0.98]">
+              <Link to="/contact">
+                Schedule a Consultation <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
           </motion.div>
-
-          {/* Team Grid */}
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="font-serif text-2xl md:text-3xl font-bold text-foreground text-center mb-12"
-            >
-              Our Team Members
-            </motion.h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {team.slice(1).map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-card border border-border rounded-xl p-6 text-center hover:shadow-lg transition-shadow"
-                >
-                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-accent/10 flex items-center justify-center">
-                    <span className="font-serif text-accent text-2xl font-bold">
-                      {member.initials}
-                    </span>
-                  </div>
-                  <h3 className="font-serif text-lg font-semibold text-foreground mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-accent text-sm font-medium mb-2">{member.role}</p>
-                  <p className="text-muted-foreground text-sm mb-3">{member.expertise}</p>
-                  <div className="flex justify-center gap-1 flex-wrap">
-                    {member.qualifications.map((q) => (
-                      <span
-                        key={q}
-                        className="px-2 py-0.5 bg-muted text-muted-foreground text-xs rounded"
-                      >
-                        {q}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Join Team CTA */}
-      <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
-            Join Our Team
-          </h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            We're always looking for talented professionals to join our growing team.
-          </p>
-          <Button asChild size="lg" className="bg-primary hover:bg-navy-light text-primary-foreground">
-            <Link to="/contact">
-              Get in Touch
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Link>
-          </Button>
         </div>
       </section>
     </Layout>

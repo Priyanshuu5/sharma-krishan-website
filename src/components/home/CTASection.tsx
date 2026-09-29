@@ -1,100 +1,119 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Phone, Mail, ArrowRight } from "lucide-react";
+import { Phone, ArrowRight, Rocket, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const contacts = [
+  {
+    name: "Mohan Lal Sharma",
+    title: "Partner, FCA",
+    phone: "+91-97823-13223",
+    href: "tel:+919782313223",
+    initials: "MS",
+    dark: true,
+  },
+  {
+    name: "Akanksha Tripathi",
+    title: "Partner, ACA",
+    phone: "+91-98872-22002",
+    href: "tel:+919887222002",
+    initials: "AT",
+    dark: false,
+  },
+];
 
 export function CTASection() {
   return (
-    <section className="py-20 lg:py-32 bg-gradient-navy relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }} />
-      </div>
+    <section className="py-28 lg:py-36 bg-background border-t border-border/40 relative overflow-hidden">
+      {/* Subtle warm pattern */}
+      <div className="absolute inset-0 pattern-dots opacity-[0.025] text-foreground pointer-events-none" />
+      {/* Ambient glows */}
+      <div className="absolute top-0 right-0 w-[500px] h-[400px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-secondary rounded-full blur-3xl pointer-events-none" />
 
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
-
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <span className="inline-block text-gold font-medium text-sm uppercase tracking-wider mb-4">
-              Get Started Today
-            </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-              Ready to Take Control of Your{" "}
-              <span className="text-gold">Financial Future?</span>
+            {/* Animated icon */}
+            <div className="flex justify-center mb-10">
+              <div className="w-16 h-16 rounded-full bg-accent/8 border border-accent/20 flex items-center justify-center"
+                style={{ animation: "pulseGold 2.5s ease-in-out infinite" }}>
+                <Rocket className="w-7 h-7 text-accent" />
+              </div>
+            </div>
+
+            <span className="text-eyebrow text-accent text-[11px]">Looking Forwards</span>
+
+            <h2 className="text-headline font-serif text-foreground mt-5 mb-6">
+              Excited About the<br />
+              <span className="italic font-light text-foreground/60">Potential for Mutual Growth</span>
             </h2>
-            <p className="text-primary-foreground/80 text-lg md:text-xl max-w-2xl mx-auto mb-10">
-              Schedule a free consultation with our experts and discover how we can help 
-              you achieve your financial goals with confidence.
+
+            <div className="w-16 h-[3px] bg-gradient-gold mx-auto mb-8 rounded-full" />
+
+            <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+              We are excited about the potential for mutual growth, shared success, and the opportunity to offer unparalleled services to our clients worldwide. Together, we can achieve great things.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button
-                asChild
-                size="lg"
-                className="bg-accent text-accent-foreground hover:bg-gold-dark shadow-gold text-base px-8"
-              >
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button asChild size="lg"
+                className="bg-primary hover:bg-navy-light text-primary-foreground text-xs uppercase tracking-widest font-bold px-10 py-7 rounded-sm shadow-lg active:scale-[0.98]">
                 <Link to="/contact">
-                  Schedule Consultation
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Start the Conversation <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-
-              {/* Ensure Explore Services is visible by default (not hidden via hover-only classes) */}
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="bg-white/90 text-primary-700 border border-gray-200 hover:bg-gray-50 text-base px-8 opacity-100 visible"
-              >
+              <Button asChild size="lg" variant="outline"
+                className="border-border/80 text-foreground hover:bg-secondary hover:border-accent/40 text-xs uppercase tracking-widest font-bold px-10 py-7 rounded-sm">
                 <Link to="/services">Explore Services</Link>
               </Button>
             </div>
 
-            {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row gap-8 justify-center">
-              <motion.a
-                href="tel:+919876543210"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors"
-              >
-                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-gold" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm text-primary-foreground/60">Call Us</p>
-                  <p className="font-medium">+91 98765 43210</p>
-                </div>
-              </motion.a>
+            {/* Contact Cards */}
+            <div className="pt-12 border-t border-border/50">
+              <p className="text-eyebrow text-muted-foreground text-[10px] mb-8">
+                Reach Our Partners Directly
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                {contacts.map((contact) => (
+                  <motion.a
+                    key={contact.name}
+                    href={contact.href}
+                    whileHover={{ y: -3 }}
+                    transition={{ type: "spring", stiffness: 320, damping: 22 }}
+                    className="flex items-center gap-5 p-6 bg-card border border-border/60 rounded-xl hover:border-accent/40 hover:shadow-card-hover transition-all duration-300 group text-left min-w-[240px]"
+                  >
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 shadow-gold ${
+                      contact.dark ? "bg-gradient-gold" : "bg-primary"
+                    }`}>
+                      <span className="font-serif font-bold text-base text-white">{contact.initials}</span>
+                    </div>
+                    <div>
+                      <p className="text-eyebrow text-muted-foreground text-[9px] mb-1">{contact.title}</p>
+                      <p className="text-base font-semibold text-foreground font-sans group-hover:text-accent transition-colors leading-tight">
+                        {contact.name}
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1 flex items-center gap-1.5">
+                        <Phone className="w-3 h-3 text-accent flex-shrink-0" />
+                        {contact.phone}
+                      </p>
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
 
-              <motion.a
-                href="mailto:info@kamsco.in"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="flex items-center justify-center gap-3 text-primary-foreground/80 hover:text-gold transition-colors"
-              >
-                <div className="w-12 h-12 rounded-full bg-gold/20 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-gold" />
-                </div>
-                <div className="text-left">
-                  <p className="text-sm text-primary-foreground/60">Email Us</p>
-                  <p className="font-medium">info@kamsco.in</p>
-                </div>
-              </motion.a>
+              {/* Email CTA */}
+              <div className="mt-8 flex items-center justify-center gap-2 text-muted-foreground text-sm">
+                <Mail className="w-4 h-4 text-accent" />
+                <a href="mailto:info@kamsco.in" className="hover:text-accent transition-colors font-sans">
+                  info@kamsco.in
+                </a>
+              </div>
             </div>
           </motion.div>
         </div>
